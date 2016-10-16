@@ -22,11 +22,11 @@ android {
 }
 
 dependencies {
-    compile  "com.android.support:recyclerview-v7:24.2.1"
+    compile  "com.android.support:recyclerview-v7:$supportLibraryVersion"
 
     // ButterKnife
-    compile "com.jakewharton:butterknife:$rootProject.ext.butterKnifeVersion"
-    apt "com.jakewharton:butterknife-compiler:$rootProject.ext.butterKnifeVersion"
+    compile "com.jakewharton:butterknife:$butterKnifeVersion"
+    apt "com.jakewharton:butterknife-compiler:$butterKnifeVersion"
 
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 }

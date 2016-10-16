@@ -3,9 +3,9 @@ package tech.thdev.androidrecyclerview.view.main.presenter
 import android.content.Context
 import android.content.Intent
 import android.util.Log
-import rx.Observable
-import rx.android.schedulers.AndroidSchedulers
-import rx.schedulers.Schedulers
+import io.reactivex.Observable
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
 import tech.thdev.androidrecyclerview.adapter.model.MainListContract
 import tech.thdev.androidrecyclerview.data.MainItem
 import tech.thdev.base.presenter.AbstractPresenter
@@ -29,11 +29,23 @@ class MainPresenter : AbstractPresenter<MainContract.View>(), MainContract.Prese
     }
 
     override fun getSampleList(prefix: String?, context: Context) {
+        // Rx 1.x
+//        getMainList(prefix, context)
+//                .subscribeOn(Schedulers.io())
+//                .filter { it != null }
+//                .observeOn(AndroidSchedulers.mainThread())
+//                .doOnUnsubscribe {
+//                    listContractView?.reload()
+//                }
+//                .subscribe {
+//                    listContractModel?.addItem(it!!)
+//                }
+        // Rx 2.
         getMainList(prefix, context)
                 .subscribeOn(Schedulers.io())
                 .filter { it != null }
                 .observeOn(AndroidSchedulers.mainThread())
-                .doOnUnsubscribe {
+                .doOnComplete {
                     listContractView?.reload()
                 }
                 .subscribe {
@@ -54,7 +66,31 @@ class MainPresenter : AbstractPresenter<MainContract.View>(), MainContract.Prese
 
         list.forEach { Log.d("TAG", "it? ${it.activityInfo.name}") }
 
-        return Observable.from(list)
+        // Rx 1.x
+//        return Observable.from(list)
+//                .map {
+//                    val label = it.loadLabel(pm)?.toString() ?: it.activityInfo.name
+//
+//                    Log.e("TAG", "label $label prefixWithSlash $prefixWithSlash")
+//
+//                    if (prefixWithSlash.length == 0 || label.startsWith(prefixWithSlash)) {
+//                        val labelPath = label.split("/")
+//                        val nextLabel = if (prefixPath.size == 0) labelPath[0] else labelPath[prefixPath.size]
+//
+//                        Log.d("TAG", "labelPath $labelPath")
+//                        Log.i("TAG", "nextLabel $nextLabel")
+//
+//                        if (prefixPath.size == labelPath.size - 1) {
+//                            return@map MainItem(nextLabel, 0).setActivityIntent(it.activityInfo.applicationInfo.packageName, it.activityInfo.name)
+//                        } else {
+//                            return@map MainItem(nextLabel, 0).setBrowseIntent(context, prefix?.let { it + "/" + nextLabel } ?: nextLabel)
+//                        }
+//                    }
+//                    null
+//                }
+
+        // Rx 2.x
+        return Observable.fromIterable(list)
                 .map {
                     val label = it.loadLabel(pm)?.toString() ?: it.activityInfo.name
 

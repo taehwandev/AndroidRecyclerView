@@ -29,21 +29,21 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:24.2.1'
-    compile 'com.android.support:design:24.2.1'
+    compile "com.android.support:appcompat-v7:$supportLibraryVersion"
+    compile "com.android.support:design:$supportLibraryVersion"
     testCompile 'junit:junit:4.12'
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
     // ButterKnife
-    compile "com.jakewharton:butterknife:$rootProject.ext.butterKnifeVersion"
-    apt "com.jakewharton:butterknife-compiler:$rootProject.ext.butterKnifeVersion"
+    compile "com.jakewharton:butterknife:$butterKnifeVersion"
+    apt "com.jakewharton:butterknife-compiler:$butterKnifeVersion"
 
     compile 'tech.thdev.support:base:1.0.4'
 
     // RX
     // https://github.com/ReactiveX/RxAndroid
-    compile 'io.reactivex:rxandroid:1.2.1'
-    compile 'io.reactivex:rxjava:1.1.6'
+    compile "io.reactivex.rxjava2:rxjava:$rxjavaVersion"
+    compile "io.reactivex.rxjava2:rxandroid:$rxandroidVersion"
 
     compile project(':recyclerview')
 }
