@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">AndroidRecyclerView</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="label_activity_basic">Basic/<b>Basic list view</b></string>
+    <string name="label_activity_test">Basic/<b>Test</b></string>
+</resources>
