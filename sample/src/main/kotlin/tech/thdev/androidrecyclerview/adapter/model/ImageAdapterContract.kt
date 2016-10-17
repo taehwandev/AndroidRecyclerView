@@ -1,19 +1,19 @@
 package tech.thdev.androidrecyclerview.adapter.model
 
-import tech.thdev.androidrecyclerview.data.MainItem
+import tech.thdev.androidrecyclerview.data.Image
 import tech.thdev.support.widget.adapter.model.BaseRecyclerModel
 
 /**
- * Created by Tae-hwan on 11/10/2016.
+ * Created by Tae-hwan on 17/10/2016.
  */
 
-interface MainListContract {
+interface ImageAdapterContract {
 
     interface View {
         fun reload()
     }
 
-    interface Model : BaseRecyclerModel<MainItem> {
+    interface Model : BaseRecyclerModel<Image> {
 
     }
 }

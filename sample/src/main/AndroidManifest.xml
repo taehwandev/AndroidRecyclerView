@@ -30,16 +30,15 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".KtMainActivity"
+        <activity android:name=".view.image.ImageListActivity"
             android:theme="@style/AppTheme.NoActionBar"
-            android:label="@string/label_activity_test">
+            android:label="@string/label_activity_image">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="tech.thdev.androidrecyclerview.SAMPLE_CODE" />
             </intent-filter>
-        </activity>
+            </activity>
     </application>
 
 </manifest>

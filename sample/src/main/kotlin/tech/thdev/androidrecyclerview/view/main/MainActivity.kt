@@ -27,8 +27,8 @@ class MainActivity : BasePresenterActivity<MainContract.View, MainContract.Prese
 
         val adapter = MainListAdapter(this)
         adapter.setOnClickListener { view, i -> presenter?.onListItemClick(i) }
-        presenter?.listContractModel = adapter
-        presenter?.listContractView = adapter
+        presenter?.adapterContractModel = adapter
+        presenter?.adapterContractView = adapter
 
         recyclerView.adapter = adapter
 

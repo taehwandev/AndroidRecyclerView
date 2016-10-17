@@ -4,9 +4,11 @@ import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.functions.Action;
 import io.reactivex.functions.Consumer;
+import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 import tech.thdev.androidrecyclerview.adapter.model.BasicAdapterContract;
 import tech.thdev.androidrecyclerview.data.BasicItem;
+import tech.thdev.androidrecyclerview.data.MainItem;
 import tech.thdev.base.presenter.AbstractPresenter;
 
 /**

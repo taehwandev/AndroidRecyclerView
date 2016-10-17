@@ -6,7 +6,8 @@ import android.util.Log
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
-import tech.thdev.androidrecyclerview.adapter.model.MainListContract
+import io.reactivex.subjects.Subject
+import tech.thdev.androidrecyclerview.adapter.model.MainAdapterContract
 import tech.thdev.androidrecyclerview.data.MainItem
 import tech.thdev.base.presenter.AbstractPresenter
 import java.util.*
@@ -18,13 +19,13 @@ import java.util.*
 
 class MainPresenter : AbstractPresenter<MainContract.View>(), MainContract.Presenter {
 
-    override var listContractView: MainListContract.View? = null
-    override var listContractModel: MainListContract.Model? = null
+    override var adapterContractView: MainAdapterContract.View? = null
+    override var adapterContractModel: MainAdapterContract.Model? = null
 
     private val CATEGORY_NAME = "tech.thdev.androidrecyclerview.SAMPLE_CODE"
 
     override fun onListItemClick(position: Int) {
-        val item = listContractModel?.getItem(position)
+        val item = adapterContractModel?.getItem(position)
         view?.changeActivity(item?.intent)
     }
 
@@ -35,25 +36,24 @@ class MainPresenter : AbstractPresenter<MainContract.View>(), MainContract.Prese
 //                .filter { it != null }
 //                .observeOn(AndroidSchedulers.mainThread())
 //                .doOnUnsubscribe {
-//                    listContractView?.reload()
+//                    adapterContractView?.reload()
 //                }
 //                .subscribe {
-//                    listContractModel?.addItem(it!!)
+//                    adapterContractModel?.addItem(it!!)
 //                }
         // Rx 2.
         getMainList(prefix, context)
                 .subscribeOn(Schedulers.io())
-                .filter { it != null }
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnComplete {
-                    listContractView?.reload()
+                    adapterContractView?.reload()
                 }
                 .subscribe {
-                    listContractModel?.addItem(it!!)
+                    adapterContractModel?.addItems(it)
                 }
     }
 
-    private fun getMainList(prefix: String?, context: Context): Observable<MainItem?> {
+    private fun getMainList(prefix: String?, context: Context): Observable<List<MainItem>> {
         Log.d("TAG", "prefix : " + prefix)
         val mainIntent = Intent(Intent.ACTION_MAIN, null)
         mainIntent.addCategory(CATEGORY_NAME)
@@ -89,27 +89,58 @@ class MainPresenter : AbstractPresenter<MainContract.View>(), MainContract.Prese
 //                    null
 //                }
 
-        // Rx 2.x
-        return Observable.fromIterable(list)
-                .map {
-                    val label = it.loadLabel(pm)?.toString() ?: it.activityInfo.name
+        val itemList = ArrayList<MainItem>()
 
-                    Log.e("TAG", "label $label prefixWithSlash $prefixWithSlash")
+//        Subject.combineLatest()
+//
+//        // Rx 2.x
+//        Observable.fromIterable(list)
+//                .map {
+//                    it.loadLabel(pm)?.toString() ?: it.activityInfo.name
+//                }
+//                .filter {
+//                    prefixWithSlash.length == 0 || it.startsWith(prefixWithSlash)
+//                }
+//                .map {
+//                    val labelPath = it.split("/")
+//                    val nextLabel = if (prefixPath.size == 0) labelPath[0] else labelPath[prefixPath.size]
+//
+//                    Log.d("TAG", "labelPath $labelPath")
+//                    Log.i("TAG", "nextLabel $nextLabel")
+//
+//                    if (prefixPath.size == labelPath.size - 1) {
+//                        return@map MainItem(nextLabel, 0).setActivityIntent(it.activityInfo.applicationInfo.packageName, it.activityInfo.name)
+//                    } else {
+//                        return@map MainItem(nextLabel, 0).setBrowseIntent(context, prefix?.let { it + "/" + nextLabel } ?: nextLabel)
+//                    }
+//                }
+//            .map {
+//                val label = it.loadLabel(pm)?.toString() ?: it.activityInfo.name
+//
+//                Log.e("TAG", "label $label prefixWithSlash $prefixWithSlash")
+//
+//                if (prefixWithSlash.length == 0 || label.startsWith(prefixWithSlash)) {
+//                    val labelPath = label.split("/")
+//                    val nextLabel = if (prefixPath.size == 0) labelPath[0] else labelPath[prefixPath.size]
+//
+//                    Log.d("TAG", "labelPath $labelPath")
+//                    Log.i("TAG", "nextLabel $nextLabel")
+//
+//                    if (prefixPath.size == labelPath.size - 1) {
+//                        return@map MainItem(nextLabel, 0).setActivityIntent(it.activityInfo.applicationInfo.packageName, it.activityInfo.name)
+//                    } else {
+//                        return@map MainItem(nextLabel, 0).setBrowseIntent(context, prefix?.let { it + "/" + nextLabel } ?: nextLabel)
+//                    }
+//                }
+//                null
+//            }
+//            .subscribe({
+//                itemList.add(it!!)
+//            }, {
+//                Log.e("TAG", "Add error")
+//            })
 
-                    if (prefixWithSlash.length == 0 || label.startsWith(prefixWithSlash)) {
-                        val labelPath = label.split("/")
-                        val nextLabel = if (prefixPath.size == 0) labelPath[0] else labelPath[prefixPath.size]
 
-                        Log.d("TAG", "labelPath $labelPath")
-                        Log.i("TAG", "nextLabel $nextLabel")
-
-                        if (prefixPath.size == labelPath.size - 1) {
-                            return@map MainItem(nextLabel, 0).setActivityIntent(it.activityInfo.applicationInfo.packageName, it.activityInfo.name)
-                        } else {
-                            return@map MainItem(nextLabel, 0).setBrowseIntent(context, prefix?.let { it + "/" + nextLabel } ?: nextLabel)
-                        }
-                    }
-                    null
-                }
+        return Observable.fromArray(itemList)
     }
 }
