@@ -2,11 +2,12 @@ package tech.thdev.androidrecyclerview.view.main.presenter
 
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.content.pm.ResolveInfo
 import android.util.Log
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
-import io.reactivex.subjects.Subject
 import tech.thdev.androidrecyclerview.adapter.model.MainAdapterContract
 import tech.thdev.androidrecyclerview.data.MainItem
 import tech.thdev.base.presenter.AbstractPresenter
@@ -89,58 +90,36 @@ class MainPresenter : AbstractPresenter<MainContract.View>(), MainContract.Prese
 //                    null
 //                }
 
+        // Rx 2.x
+
         val itemList = ArrayList<MainItem>()
 
-//        Subject.combineLatest()
-//
-//        // Rx 2.x
-//        Observable.fromIterable(list)
-//                .map {
-//                    it.loadLabel(pm)?.toString() ?: it.activityInfo.name
-//                }
-//                .filter {
-//                    prefixWithSlash.length == 0 || it.startsWith(prefixWithSlash)
-//                }
-//                .map {
-//                    val labelPath = it.split("/")
-//                    val nextLabel = if (prefixPath.size == 0) labelPath[0] else labelPath[prefixPath.size]
-//
-//                    Log.d("TAG", "labelPath $labelPath")
-//                    Log.i("TAG", "nextLabel $nextLabel")
-//
-//                    if (prefixPath.size == labelPath.size - 1) {
-//                        return@map MainItem(nextLabel, 0).setActivityIntent(it.activityInfo.applicationInfo.packageName, it.activityInfo.name)
-//                    } else {
-//                        return@map MainItem(nextLabel, 0).setBrowseIntent(context, prefix?.let { it + "/" + nextLabel } ?: nextLabel)
-//                    }
-//                }
-//            .map {
-//                val label = it.loadLabel(pm)?.toString() ?: it.activityInfo.name
-//
-//                Log.e("TAG", "label $label prefixWithSlash $prefixWithSlash")
-//
-//                if (prefixWithSlash.length == 0 || label.startsWith(prefixWithSlash)) {
-//                    val labelPath = label.split("/")
-//                    val nextLabel = if (prefixPath.size == 0) labelPath[0] else labelPath[prefixPath.size]
-//
-//                    Log.d("TAG", "labelPath $labelPath")
-//                    Log.i("TAG", "nextLabel $nextLabel")
-//
-//                    if (prefixPath.size == labelPath.size - 1) {
-//                        return@map MainItem(nextLabel, 0).setActivityIntent(it.activityInfo.applicationInfo.packageName, it.activityInfo.name)
-//                    } else {
-//                        return@map MainItem(nextLabel, 0).setBrowseIntent(context, prefix?.let { it + "/" + nextLabel } ?: nextLabel)
-//                    }
-//                }
-//                null
-//            }
-//            .subscribe({
-//                itemList.add(it!!)
-//            }, {
-//                Log.e("TAG", "Add error")
-//            })
+        Observable.fromIterable(list)
+            .filter { hashStartsWith(pm, prefixWithSlash, it) }
+            .map {
+                val label = it.loadLabel(pm)?.toString() ?: it.activityInfo.name
+                val labelPath = label.split("/")
+                val nextLabel = if (prefixPath.size == 0) labelPath[0] else labelPath[prefixPath.size]
+
+                Log.d("TAG", "labelPath $labelPath")
+                Log.i("TAG", "nextLabel $nextLabel")
+
+                if (prefixPath.size == labelPath.size - 1) {
+                    return@map MainItem(nextLabel, 0).setActivityIntent(it.activityInfo.applicationInfo.packageName, it.activityInfo.name)
+                } else {
+                    return@map MainItem(nextLabel, 0).setBrowseIntent(context, prefix?.let { it + "/" + nextLabel } ?: nextLabel)
+                }
+            }
+            .subscribe {
+                itemList.add(it)
+            }
 
 
         return Observable.fromArray(itemList)
+    }
+
+    private fun hashStartsWith(pm: PackageManager, prefixWithSlash: String, resolveInfo: ResolveInfo): Boolean {
+        val label = resolveInfo.loadLabel(pm)?.toString() ?: resolveInfo.activityInfo.name
+        return prefixWithSlash.length == 0 || label.startsWith(prefixWithSlash)
     }
 }
