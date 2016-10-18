@@ -7,7 +7,7 @@ import org.jetbrains.annotations.Nullable;
 
 import butterknife.BindView;
 import tech.thdev.androidrecyclerview.R;
-import tech.thdev.androidrecyclerview.adapter.BasicAdapter;
+import tech.thdev.androidrecyclerview.adapter.basic.BasicAdapter;
 import tech.thdev.androidrecyclerview.view.basic.presenter.BasicContract;
 import tech.thdev.androidrecyclerview.view.basic.presenter.BasicPresenter;
 import tech.thdev.base.view.BasePresenterActivity;

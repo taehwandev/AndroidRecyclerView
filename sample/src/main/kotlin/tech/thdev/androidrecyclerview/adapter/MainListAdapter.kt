@@ -2,7 +2,7 @@ package tech.thdev.androidrecyclerview.adapter
 
 import android.content.Context
 import android.view.ViewGroup
-import tech.thdev.androidrecyclerview.adapter.holder.MainListViewHolder
+import tech.thdev.androidrecyclerview.adapter.basic.holder.MainListViewHolder
 import tech.thdev.androidrecyclerview.adapter.model.MainAdapterContract
 import tech.thdev.androidrecyclerview.data.MainItem
 import tech.thdev.androidrecyclerview.listener.OnItemClickListener

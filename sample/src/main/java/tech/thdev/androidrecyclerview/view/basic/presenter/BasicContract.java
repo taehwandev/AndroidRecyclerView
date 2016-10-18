@@ -1,6 +1,6 @@
 package tech.thdev.androidrecyclerview.view.basic.presenter;
 
-import tech.thdev.androidrecyclerview.adapter.model.BasicAdapterContract;
+import tech.thdev.androidrecyclerview.adapter.model.AdapterContract;
 import tech.thdev.base.presenter.BasePresenter;
 import tech.thdev.base.presenter.BaseView;
 
@@ -16,9 +16,9 @@ public interface BasicContract {
 
     interface Presenter extends BasePresenter<View> {
 
-        void setAdapterView(BasicAdapterContract.View adapterView);
+        void setAdapterView(AdapterContract.View adapterView);
 
-        void setAdapterModel(BasicAdapterContract.Model adapterModel);
+        void setAdapterModel(AdapterContract.Model adapterModel);
 
         void loadList();
     }

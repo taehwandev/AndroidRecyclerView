@@ -1,4 +1,4 @@
-package tech.thdev.androidrecyclerview.adapter.holder
+package tech.thdev.androidrecyclerview.adapter.basic.holder
 
 import android.view.ViewGroup
 import android.widget.TextView

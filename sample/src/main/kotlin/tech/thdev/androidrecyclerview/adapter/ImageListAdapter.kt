@@ -2,7 +2,7 @@ package tech.thdev.androidrecyclerview.adapter
 
 import android.content.Context
 import android.view.ViewGroup
-import tech.thdev.androidrecyclerview.adapter.holder.ImageLargeViewHolder
+import tech.thdev.androidrecyclerview.adapter.basic.holder.ImageLargeViewHolder
 import tech.thdev.androidrecyclerview.adapter.model.ImageAdapterContract
 import tech.thdev.androidrecyclerview.data.Image
 import tech.thdev.support.widget.adapter.BaseRecyclerAdapter

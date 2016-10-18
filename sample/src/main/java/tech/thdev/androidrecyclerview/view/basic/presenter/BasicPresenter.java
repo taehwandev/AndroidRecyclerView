@@ -4,11 +4,9 @@ import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.functions.Action;
 import io.reactivex.functions.Consumer;
-import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
-import tech.thdev.androidrecyclerview.adapter.model.BasicAdapterContract;
+import tech.thdev.androidrecyclerview.adapter.model.AdapterContract;
 import tech.thdev.androidrecyclerview.data.BasicItem;
-import tech.thdev.androidrecyclerview.data.MainItem;
 import tech.thdev.base.presenter.AbstractPresenter;
 
 /**
@@ -17,8 +15,8 @@ import tech.thdev.base.presenter.AbstractPresenter;
 
 public class BasicPresenter extends AbstractPresenter<BasicContract.View> implements BasicContract.Presenter {
 
-    private BasicAdapterContract.View adapterView;
-    private BasicAdapterContract.Model adapterModel;
+    private AdapterContract.View adapterView;
+    private AdapterContract.Model adapterModel;
 
     @Override
     public void loadList() {
@@ -67,12 +65,12 @@ public class BasicPresenter extends AbstractPresenter<BasicContract.View> implem
     }
 
     @Override
-    public void setAdapterView(BasicAdapterContract.View adapterView) {
+    public void setAdapterView(AdapterContract.View adapterView) {
         this.adapterView = adapterView;
     }
 
     @Override
-    public void setAdapterModel(BasicAdapterContract.Model adapterModel) {
+    public void setAdapterModel(AdapterContract.Model adapterModel) {
         this.adapterModel = adapterModel;
     }
 }

@@ -1,4 +1,4 @@
-package tech.thdev.androidrecyclerview.adapter.holder;
+package tech.thdev.androidrecyclerview.adapter.basic.holder;
 
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -8,7 +8,7 @@ import org.jetbrains.annotations.Nullable;
 
 import butterknife.BindView;
 import tech.thdev.androidrecyclerview.R;
-import tech.thdev.androidrecyclerview.adapter.BasicAdapter;
+import tech.thdev.androidrecyclerview.adapter.basic.BasicAdapter;
 import tech.thdev.androidrecyclerview.data.BasicItem;
 import tech.thdev.support.widget.adapter.BaseRecyclerAdapter;
 import tech.thdev.support.widget.adapter.view.BaseRecyclerViewHolder;

@@ -29,7 +29,7 @@ class ImageListFragment :
         fun getInstance() = ImageListFragment()
     }
 
-    override fun getLayout() = R.layout.fragment_image_list
+    override fun getLayout() = R.layout.fragment_recycler_view
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

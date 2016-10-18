@@ -40,6 +40,15 @@
                 <category android:name="tech.thdev.androidrecyclerview.SAMPLE_CODE" />
             </intent-filter>
             </activity>
+        <activity android:name=".view.design.image.CustomScrollImageActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:label="@string/label_activity_custom_scroll_image">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="tech.thdev.androidrecyclerview.SAMPLE_CODE" />
+            </intent-filter>
+            </activity>
     </application>
 
 </manifest>

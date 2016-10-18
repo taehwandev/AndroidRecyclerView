@@ -19,7 +19,7 @@ class ImagesLocalDataSource : ImagesDataSource {
                     .map {
                         val name = String.format("sample_%02d", it)
                         val resource = MyApplication.appContext.resources.getIdentifier(name, "drawable", MyApplication.appContext.packageName)
-                        Image(resource, name, "Message %name", 0)
+                        Image(resource, name, "Message $name", 0)
                     }
                     .subscribe {
                         imageList.add(it)

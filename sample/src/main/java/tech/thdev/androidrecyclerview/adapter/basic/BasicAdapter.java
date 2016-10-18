@@ -1,12 +1,12 @@
-package tech.thdev.androidrecyclerview.adapter;
+package tech.thdev.androidrecyclerview.adapter.basic;
 
 import android.content.Context;
 import android.view.ViewGroup;
 
 import org.jetbrains.annotations.NotNull;
 
-import tech.thdev.androidrecyclerview.adapter.model.BasicAdapterContract;
-import tech.thdev.androidrecyclerview.adapter.holder.BasicViewHolder;
+import tech.thdev.androidrecyclerview.adapter.model.AdapterContract;
+import tech.thdev.androidrecyclerview.adapter.basic.holder.BasicViewHolder;
 import tech.thdev.androidrecyclerview.data.BasicItem;
 import tech.thdev.support.widget.adapter.BaseRecyclerAdapter;
 import tech.thdev.support.widget.adapter.view.BaseRecyclerViewHolder;
@@ -17,7 +17,7 @@ import tech.thdev.support.widget.adapter.view.BaseRecyclerViewHolder;
 
 public class BasicAdapter
         extends BaseRecyclerAdapter<BasicItem>
-        implements BasicAdapterContract.Model, BasicAdapterContract.View {
+        implements AdapterContract.Model<BasicItem>, AdapterContract.View {
 
     public BasicAdapter(@NotNull Context context) {
         super(context);

@@ -46,6 +46,9 @@ dependencies {
     compile "io.reactivex.rxjava2:rxjava:$rxjavaVersion"
     compile "io.reactivex.rxjava2:rxandroid:$rxandroidVersion"
 
+    // image metadata
+    compile 'com.drewnoakes:metadata-extractor:2.9.1'
+
     compile project(':recyclerview')
 }
 repositories {

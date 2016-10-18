@@ -3,5 +3,6 @@
     <string name="action_settings">Settings</string>
 
     <string name="label_activity_basic">Basic/<b>Basic list view</b></string>
-    <string name="label_activity_image">Design/<b>Image list view</b></string>
+    <string name="label_activity_image">Design/<b>Image list view - Kotlin</b></string>
+    <string name="label_activity_custom_scroll_image">Design/<b>Custom scroll image list - Java</b></string>
 </resources>
