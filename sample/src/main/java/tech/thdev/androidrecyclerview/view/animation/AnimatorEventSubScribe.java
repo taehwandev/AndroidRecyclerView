@@ -1,38 +1,37 @@
 package tech.thdev.androidrecyclerview.view.animation;
 
 import android.animation.Animator;
-import android.view.View;
+import android.util.Log;
 
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
+import io.reactivex.disposables.Disposable;
 
 /**
  * Created by Tae-hwan on 20/10/2016.
  */
-public class AnimatorSubScribe implements ObservableOnSubscribe<AnimEvent> {
+public class AnimatorEventSubScribe implements ObservableOnSubscribe<ItemAnimatorEvent> {
 
     private Animator animator;
-    private View view;
 
-    public AnimatorSubScribe(Animator animator, View view) {
+    public AnimatorEventSubScribe(Animator animator) {
         this.animator = animator;
-        this.view = view;
     }
 
     @Override
-    public void subscribe(final ObservableEmitter<AnimEvent> e) throws Exception {
-        Animator.AnimatorListener listener = new Animator.AnimatorListener() {
+    public void subscribe(final ObservableEmitter<ItemAnimatorEvent> e) throws Exception {
+        final Animator.AnimatorListener listener = new Animator.AnimatorListener() {
             @Override
             public void onAnimationStart(Animator animation) {
                 if (!e.isCancelled()) {
-                    e.onNext(AnimEvent.eventCreate(animation, AnimEvent.ANIM_START));
+                    e.onNext(ItemAnimatorEvent.eventCreate(animation, ItemAnimatorEvent.ANIM_START));
                 }
             }
 
             @Override
             public void onAnimationEnd(Animator animation) {
                 if (!e.isCancelled()) {
-                    e.onNext(AnimEvent.eventCreate(animation, AnimEvent.ANIM_END));
+                    e.onNext(ItemAnimatorEvent.eventCreate(animation, ItemAnimatorEvent.ANIM_END));
                 }
             }
 
@@ -49,5 +48,18 @@ public class AnimatorSubScribe implements ObservableOnSubscribe<AnimEvent> {
 
         animator.addListener(listener);
         animator.start();
+
+        e.setDisposable(new Disposable() {
+            @Override
+            public void dispose() {
+                animator.cancel();
+                animator.removeAllListeners();
+            }
+
+            @Override
+            public boolean isDisposed() {
+                return true;
+            }
+        });
     }
 }

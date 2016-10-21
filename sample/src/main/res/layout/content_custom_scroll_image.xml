@@ -8,6 +8,14 @@
     tools:context=".view.design.image.CustomScrollImageActivity"
     tools:showIn="@layout/activity_custom_scroll_image">
 
+    <FrameLayout
+        android:id="@+id/frame_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true" />
+
     <RelativeLayout
         android:id="@+id/rl_head"
         android:layout_width="match_parent"
@@ -38,13 +46,5 @@
                 android:textColor="#fff" />
         </RelativeLayout>
     </RelativeLayout>
-
-    <FrameLayout
-        android:id="@+id/frame_layout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

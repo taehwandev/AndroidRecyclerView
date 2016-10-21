@@ -11,9 +11,9 @@ import butterknife.BindView;
 import tech.thdev.androidrecyclerview.R;
 import tech.thdev.androidrecyclerview.adapter.image.CustomScrollImageAdapter;
 import tech.thdev.androidrecyclerview.data.source.image.ImagesMetaLocalRepository;
-import tech.thdev.androidrecyclerview.view.OnRecyclerScrollListener;
 import tech.thdev.androidrecyclerview.view.design.image.presenter.CustomScrollImageContract;
 import tech.thdev.androidrecyclerview.view.design.image.presenter.CustomScrollImagePresenter;
+import tech.thdev.androidrecyclerview.view.scroll.anim.OnRecyclerScrollListener;
 import tech.thdev.base.view.BasePresenterFragment;
 
 /**
@@ -66,10 +66,10 @@ public class CustomScrollImageFragment
         recyclerView.addOnScrollListener(onCustomScrollListener);
 
         rlHead.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED);
-        onCustomScrollListener.setView(rlHead, -rlHead.getMeasuredHeight());
+        onCustomScrollListener.addView(rlHead, -rlHead.getMeasuredHeight());
 
         rlBottomLayout.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED);
-        onCustomScrollListener.setView(rlBottomLayout, rlBottomLayout.getMeasuredHeight());
+        onCustomScrollListener.addView(rlBottomLayout, rlBottomLayout.getMeasuredHeight());
 
         getPresenter().updateImage();
     }
@@ -81,7 +81,7 @@ public class CustomScrollImageFragment
 
     @Override
     public void hideProgress() {
-        onCustomScrollListener.init();
+
     }
 
     @Override
@@ -93,6 +93,7 @@ public class CustomScrollImageFragment
     public void onDestroy() {
         super.onDestroy();
         if (recyclerView != null) {
+            onCustomScrollListener.destroy();
             recyclerView.removeOnScrollListener(onCustomScrollListener);
         }
     }

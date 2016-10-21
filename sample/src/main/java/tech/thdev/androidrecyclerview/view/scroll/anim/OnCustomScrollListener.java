@@ -1,4 +1,4 @@
-package tech.thdev.androidrecyclerview.view;
+package tech.thdev.androidrecyclerview.view.scroll.anim;
 
 import android.animation.ObjectAnimator;
 import android.support.v7.widget.RecyclerView;
