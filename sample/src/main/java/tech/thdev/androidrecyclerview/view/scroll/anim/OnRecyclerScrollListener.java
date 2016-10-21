@@ -42,8 +42,6 @@ public class OnRecyclerScrollListener extends RecyclerView.OnScrollListener {
 
     private int prevScrollEvent = SCROLL_NONE;
 
-    private long timeOut;
-
     private Disposable animDisposable;
 
     private final ArrayList<AnimView> animViewList = new ArrayList<>();
@@ -66,8 +64,10 @@ public class OnRecyclerScrollListener extends RecyclerView.OnScrollListener {
     public final void destroy() {
         animViewList.clear();
 
-        animDisposable.dispose();
-        animDisposable = null;
+        if (animDisposable != null) {
+            animDisposable.dispose();
+            animDisposable = null;
+        }
 
         animObservableList.clear();
 
