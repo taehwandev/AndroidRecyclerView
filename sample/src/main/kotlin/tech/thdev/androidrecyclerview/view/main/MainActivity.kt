@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.Toolbar
 import tech.thdev.androidrecyclerview.R
-import tech.thdev.androidrecyclerview.adapter.MainListAdapter
+import tech.thdev.androidrecyclerview.adapter.main.MainListAdapterSimple
 import tech.thdev.androidrecyclerview.contract.Contract
 import tech.thdev.androidrecyclerview.view.main.presenter.MainContract
 import tech.thdev.androidrecyclerview.view.main.presenter.MainPresenter
@@ -25,7 +25,7 @@ class MainActivity : BasePresenterActivity<MainContract.View, MainContract.Prese
 
         val prefix = intent.getStringExtra(Contract.KEY_EXTRA_PATH)
 
-        val adapter = MainListAdapter(this)
+        val adapter = MainListAdapterSimple(this)
         adapter.setOnClickListener { view, i -> presenter?.onListItemClick(i) }
         presenter?.adapterContractModel = adapter
         presenter?.adapterContractView = adapter

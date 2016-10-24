@@ -1,25 +1,23 @@
-package tech.thdev.androidrecyclerview.adapter.basic.holder
+package tech.thdev.androidrecyclerview.adapter.holder
 
-import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import io.reactivex.Observable
-import io.reactivex.Scheduler
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import tech.thdev.androidrecyclerview.R
 import tech.thdev.androidrecyclerview.data.Image
-import tech.thdev.support.widget.adapter.BaseRecyclerAdapter
+import tech.thdev.support.widget.adapter.BaseSimpleRecyclerAdapter
 import tech.thdev.support.widget.adapter.view.BaseRecyclerViewHolder
 
 /**
  * Created by Tae-hwan on 17/10/2016.
  */
 
-class ImageLargeViewHolder(parent: ViewGroup?, adapter: BaseRecyclerAdapter<Image>) :
-        BaseRecyclerViewHolder<Image>(R.layout.item_large_view, parent, adapter) {
+class ImageLargeViewHolder(parent: ViewGroup?, adapterSimple: BaseSimpleRecyclerAdapter<Image>) :
+        BaseRecyclerViewHolder<Image>(R.layout.item_large_view, parent, adapterSimple) {
 
     private val image by lazy {
         itemView?.findViewById(R.id.img_large) as ImageView

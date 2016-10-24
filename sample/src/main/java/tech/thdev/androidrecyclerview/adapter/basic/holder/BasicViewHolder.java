@@ -8,9 +8,9 @@ import org.jetbrains.annotations.Nullable;
 
 import butterknife.BindView;
 import tech.thdev.androidrecyclerview.R;
-import tech.thdev.androidrecyclerview.adapter.basic.BasicAdapter;
+import tech.thdev.androidrecyclerview.adapter.basic.BasicAdapterSimple;
 import tech.thdev.androidrecyclerview.data.BasicItem;
-import tech.thdev.support.widget.adapter.BaseRecyclerAdapter;
+import tech.thdev.support.widget.adapter.BaseSimpleRecyclerAdapter;
 import tech.thdev.support.widget.adapter.view.BaseRecyclerViewHolder;
 
 /**
@@ -22,7 +22,7 @@ public class BasicViewHolder extends BaseRecyclerViewHolder<BasicItem> {
     @BindView(R.id.text)
     TextView textView;
 
-    public BasicViewHolder(@Nullable ViewGroup parent, @NotNull BaseRecyclerAdapter<BasicItem> adapter) {
+    public BasicViewHolder(@Nullable ViewGroup parent, @NotNull BaseSimpleRecyclerAdapter<BasicItem> adapter) {
         super(R.layout.item_basic, parent, adapter);
     }
 
@@ -31,14 +31,9 @@ public class BasicViewHolder extends BaseRecyclerViewHolder<BasicItem> {
         textView.setText(item.name);
     }
 
-    @Override
-    public void onViewHolder(int position) {
-        // Do noting...
-    }
-
     @NotNull
     @Override
-    public BasicAdapter getAdapter() {
-        return (BasicAdapter) super.getAdapter();
+    public BasicAdapterSimple getAdapter() {
+        return (BasicAdapterSimple) super.getAdapter();
     }
 }

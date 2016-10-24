@@ -9,7 +9,7 @@ import org.jetbrains.annotations.Nullable;
 
 import butterknife.BindView;
 import tech.thdev.androidrecyclerview.R;
-import tech.thdev.androidrecyclerview.adapter.image.CustomScrollImageAdapter;
+import tech.thdev.androidrecyclerview.adapter.image.CustomScrollImageAdapterSimple;
 import tech.thdev.androidrecyclerview.data.source.image.ImagesMetaLocalRepository;
 import tech.thdev.androidrecyclerview.view.design.image.presenter.CustomScrollImageContract;
 import tech.thdev.androidrecyclerview.view.design.image.presenter.CustomScrollImagePresenter;
@@ -56,7 +56,7 @@ public class CustomScrollImageFragment
         rlHead = (RelativeLayout) getActivity().findViewById(R.id.rl_head);
         rlBottomLayout = (RelativeLayout) getActivity().findViewById(R.id.rl_bottom_layout);
 
-        CustomScrollImageAdapter adapter = new CustomScrollImageAdapter(getContext());
+        CustomScrollImageAdapterSimple adapter = new CustomScrollImageAdapterSimple(getContext());
 
         getPresenter().setAdapterView(adapter);
         getPresenter().setAdapterModel(adapter);

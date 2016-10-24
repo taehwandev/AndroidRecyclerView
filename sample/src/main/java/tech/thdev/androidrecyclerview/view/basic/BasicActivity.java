@@ -7,7 +7,7 @@ import org.jetbrains.annotations.Nullable;
 
 import butterknife.BindView;
 import tech.thdev.androidrecyclerview.R;
-import tech.thdev.androidrecyclerview.adapter.basic.BasicAdapter;
+import tech.thdev.androidrecyclerview.adapter.basic.BasicAdapterSimple;
 import tech.thdev.androidrecyclerview.view.basic.presenter.BasicContract;
 import tech.thdev.androidrecyclerview.view.basic.presenter.BasicPresenter;
 import tech.thdev.base.view.BasePresenterActivity;
@@ -26,7 +26,7 @@ public class BasicActivity extends BasePresenterActivity<BasicContract.View, Bas
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recycler_view);
 
-        BasicAdapter adapter = new BasicAdapter(this);
+        BasicAdapterSimple adapter = new BasicAdapterSimple(this);
         getPresenter().setAdapterModel(adapter);
         getPresenter().setAdapterView(adapter);
 

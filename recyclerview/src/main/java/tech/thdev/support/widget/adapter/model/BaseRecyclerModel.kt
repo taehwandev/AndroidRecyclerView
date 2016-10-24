@@ -1,12 +1,10 @@
 package tech.thdev.support.widget.adapter.model
 
-import tech.thdev.support.widget.data.BaseItem
-
 /**
  * Created by Tae-hwan on 10/10/2016.
  */
 
-interface BaseRecyclerModel<ITEM : BaseItem> {
+interface BaseRecyclerModel<ITEM> {
 
     fun addItem(item: ITEM)
 
@@ -20,7 +18,7 @@ interface BaseRecyclerModel<ITEM : BaseItem> {
 
     fun removeItem(position: Int)
 
-    fun getItem(position: Int): ITEM?
+    fun getItem(position: Int): Any?
 
-    fun getCount(): Int
+    fun getItemRealCount(): Int
 }

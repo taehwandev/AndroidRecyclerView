@@ -3,31 +3,38 @@ package tech.thdev.support.widget.adapter
 import android.content.Context
 import android.support.v7.widget.RecyclerView
 import tech.thdev.support.widget.adapter.model.BaseRecyclerModel
-import tech.thdev.support.widget.adapter.open.OpenBaseViewHolder
-import tech.thdev.support.widget.data.BaseItem
+import tech.thdev.support.widget.adapter.view.BaseRecyclerViewHolder
 import java.util.*
 
 /**
  * Created by Tae-hwan on 10/10/2016.
+ *
+ * Default RecyclerAdapter
  */
 
-abstract class BaseRecyclerAdapter<ITEM : BaseItem>(val context: Context)
-    : RecyclerView.Adapter<OpenBaseViewHolder<ITEM>>(), BaseRecyclerModel<ITEM> {
+abstract class BaseSimpleRecyclerAdapter<ITEM>(open val context: Context) :
+        RecyclerView.Adapter<BaseRecyclerViewHolder<ITEM>>(), BaseRecyclerModel<Any> {
 
-    private val itemList: MutableList<ITEM> = ArrayList()
+    private val itemList: MutableList<Any> = ArrayList()
 
-    override fun onBindViewHolder(holder: OpenBaseViewHolder<ITEM>?, position: Int) {
+    override fun onBindViewHolder(holder: BaseRecyclerViewHolder<ITEM>?, position: Int) {
         getItem(position)
                 ?.let { holder?.onViewHolder(it, position) }
                 ?: holder?.onViewHolder(position)
     }
 
+
+    /**
+     * 해당 View
+     */
+    abstract fun getViewType(position: Int): Int
+
     override fun getItemCount() = itemList.size
 
     override fun getItemViewType(position: Int)
-            = getItem(position)?.viewType ?: super.getItemViewType(position)
+            = getViewType(position)
 
-    override fun addItem(item: ITEM) {
+    override fun addItem(item: Any) {
         itemList.add(item)
     }
 
@@ -53,5 +60,5 @@ abstract class BaseRecyclerAdapter<ITEM : BaseItem>(val context: Context)
 
     override fun getItem(position: Int): ITEM? = itemList[position]
 
-    override fun getCount() = itemCount
+    override fun getItemRealCount() = itemCount
 }

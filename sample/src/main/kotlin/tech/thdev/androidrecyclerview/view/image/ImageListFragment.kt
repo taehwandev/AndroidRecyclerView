@@ -5,7 +5,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.widget.Toast
 import tech.thdev.androidrecyclerview.R
-import tech.thdev.androidrecyclerview.adapter.ImageListAdapter
+import tech.thdev.androidrecyclerview.adapter.ImageListAdapterSimple
 import tech.thdev.androidrecyclerview.data.source.image.ImagesRepository
 import tech.thdev.androidrecyclerview.view.image.presenter.ImageListContract
 import tech.thdev.androidrecyclerview.view.image.presenter.ImageListPresenter
@@ -34,7 +34,7 @@ class ImageListFragment :
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val imageListAdapter = ImageListAdapter(context)
+        val imageListAdapter = ImageListAdapterSimple(context)
 
         presenter?.listContractModel = imageListAdapter
         presenter?.listContractView = imageListAdapter
