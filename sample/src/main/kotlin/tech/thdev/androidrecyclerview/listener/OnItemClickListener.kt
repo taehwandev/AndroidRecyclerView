@@ -1,6 +1,6 @@
 package tech.thdev.androidrecyclerview.listener
 
-import tech.thdev.support.widget.adapter.BaseSimpleRecyclerAdapter
+import tech.thdev.support.widget.adapter.simple.BaseTypedefRecyclerAdapter
 
 
 /**
@@ -9,5 +9,5 @@ import tech.thdev.support.widget.adapter.BaseSimpleRecyclerAdapter
 
 interface OnItemClickListener {
 
-    fun onItemClick(view: BaseSimpleRecyclerAdapter<*>, position: Int)
+    fun onItemClick(view: BaseTypedefRecyclerAdapter<*>, position: Int)
 }

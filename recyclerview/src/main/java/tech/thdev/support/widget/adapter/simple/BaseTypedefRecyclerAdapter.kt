@@ -1,4 +1,4 @@
-package tech.thdev.support.widget.adapter
+package tech.thdev.support.widget.adapter.simple
 
 import android.content.Context
 import tech.thdev.support.widget.data.BaseItem
@@ -8,7 +8,7 @@ import tech.thdev.support.widget.data.BaseItem
  *
  * implement ITEM: BaseItem
  */
-abstract class BaseViewTypeRecyclerAdapter<ITEM : BaseItem>(context: Context) : BaseSimpleRecyclerAdapter<ITEM>(context) {
+abstract class BaseTypedefRecyclerAdapter<ITEM : BaseItem>(context: Context) : BaseSimpleRecyclerAdapter<ITEM>(context) {
 
     override fun getViewType(position: Int)
             = getItem(position)?.let { it.viewType } ?: -1

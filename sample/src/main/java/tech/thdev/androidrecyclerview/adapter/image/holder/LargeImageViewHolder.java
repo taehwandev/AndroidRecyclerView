@@ -17,25 +17,25 @@ import io.reactivex.schedulers.Schedulers;
 import tech.thdev.androidrecyclerview.MyApplication;
 import tech.thdev.androidrecyclerview.R;
 import tech.thdev.androidrecyclerview.data.LocalImage;
-import tech.thdev.support.widget.adapter.BaseSimpleRecyclerAdapter;
-import tech.thdev.support.widget.adapter.view.BaseRecyclerViewHolder;
+import tech.thdev.support.widget.adapter.simple.BaseTypedefRecyclerAdapter;
+import tech.thdev.support.widget.adapter.simple.holder.BaseViewHolder;
 
 /**
  * Created by Tae-hwan on 18/10/2016.
  */
 
-public class LargeImageViewHolder extends BaseRecyclerViewHolder<LocalImage> {
+public class LargeImageViewHolder extends BaseViewHolder<LocalImage> {
 
     @BindView(R.id.img_large)
     ImageView imageView;
 
-    public LargeImageViewHolder(@Nullable ViewGroup parent, @NotNull BaseSimpleRecyclerAdapter<LocalImage> adapter) {
+    public LargeImageViewHolder(@Nullable ViewGroup parent, @NotNull BaseTypedefRecyclerAdapter<LocalImage> adapter) {
         super(R.layout.item_large_view, parent, adapter);
     }
 
     @Override
-    public void onViewHolder(@NotNull Object item, int position) {
-        Observable.just(item)
+    public void onViewHolder(LocalImage localImage, int position) {
+        Observable.just(localImage)
                 .subscribeOn(Schedulers.newThread())
                 .map(new Function<LocalImage, Bitmap>() {
                     @Override

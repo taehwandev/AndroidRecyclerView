@@ -3,7 +3,6 @@ package tech.thdev.support.widget.adapter
 import android.content.Context
 import android.support.v7.widget.RecyclerView
 import tech.thdev.support.widget.adapter.model.BaseRecyclerModel
-import tech.thdev.support.widget.adapter.view.BaseRecyclerViewHolder
 import java.util.*
 
 /**
@@ -12,29 +11,19 @@ import java.util.*
  * Default RecyclerAdapter
  */
 
-abstract class BaseSimpleRecyclerAdapter<ITEM>(open val context: Context) :
-        RecyclerView.Adapter<BaseRecyclerViewHolder<ITEM>>(), BaseRecyclerModel<Any> {
+abstract class PrivateRecyclerAdapter<ITEM, VIEW_TYPE : RecyclerView.ViewHolder?>(open val context: Context) :
+        RecyclerView.Adapter<VIEW_TYPE>(), BaseRecyclerModel<ITEM> {
 
-    private val itemList: MutableList<Any> = ArrayList()
+    private val itemList: MutableList<ITEM> = ArrayList()
 
-    override fun onBindViewHolder(holder: BaseRecyclerViewHolder<ITEM>?, position: Int) {
-        getItem(position)
-                ?.let { holder?.onViewHolder(it, position) }
-                ?: holder?.onViewHolder(position)
-    }
-
-
-    /**
-     * 해당 View
-     */
     abstract fun getViewType(position: Int): Int
-
-    override fun getItemCount() = itemList.size
 
     override fun getItemViewType(position: Int)
             = getViewType(position)
 
-    override fun addItem(item: Any) {
+    override fun getItemCount() = itemList.size
+
+    override fun addItem(item: ITEM) {
         itemList.add(item)
     }
 

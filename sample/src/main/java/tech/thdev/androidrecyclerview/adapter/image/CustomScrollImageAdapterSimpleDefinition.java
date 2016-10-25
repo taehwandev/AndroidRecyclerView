@@ -6,23 +6,23 @@ import android.view.ViewGroup;
 import tech.thdev.androidrecyclerview.adapter.image.holder.LargeImageViewHolder;
 import tech.thdev.androidrecyclerview.adapter.model.AdapterContract;
 import tech.thdev.androidrecyclerview.data.LocalImage;
-import tech.thdev.support.widget.adapter.BaseViewTypeRecyclerAdapter;
-import tech.thdev.support.widget.adapter.view.BaseRecyclerViewHolder;
+import tech.thdev.support.widget.adapter.simple.BaseTypedefRecyclerAdapter;
+import tech.thdev.support.widget.adapter.simple.holder.BaseViewHolder;
 
 /**
  * Created by Tae-hwan on 18/10/2016.
  */
 
-public class CustomScrollImageAdapterSimple
-        extends BaseViewTypeRecyclerAdapter<LocalImage>
+public class CustomScrollImageAdapterSimpleDefinition
+        extends BaseTypedefRecyclerAdapter<LocalImage>
         implements AdapterContract.Model<LocalImage>, AdapterContract.View {
 
-    public CustomScrollImageAdapterSimple(Context context) {
+    public CustomScrollImageAdapterSimpleDefinition(Context context) {
         super(context);
     }
 
     @Override
-    public BaseRecyclerViewHolder<LocalImage> onCreateViewHolder(ViewGroup parent, int viewType) {
+    public BaseViewHolder<LocalImage> onCreateViewHolder(ViewGroup parent, int viewType) {
         return new LargeImageViewHolder(parent, this);
     }
 

@@ -8,23 +8,23 @@ import org.jetbrains.annotations.NotNull;
 import tech.thdev.androidrecyclerview.adapter.basic.holder.BasicViewHolder;
 import tech.thdev.androidrecyclerview.adapter.model.AdapterContract;
 import tech.thdev.androidrecyclerview.data.BasicItem;
-import tech.thdev.support.widget.adapter.BaseViewTypeRecyclerAdapter;
-import tech.thdev.support.widget.adapter.view.BaseRecyclerViewHolder;
+import tech.thdev.support.widget.adapter.simple.BaseTypedefRecyclerAdapter;
+import tech.thdev.support.widget.adapter.simple.holder.BaseViewHolder;
 
 /**
  * Created by Tae-hwan on 10/10/2016.
  */
 
-public class BasicAdapterSimple
-        extends BaseViewTypeRecyclerAdapter<BasicItem>
+public class BasicAdapterSimpleDefinition
+        extends BaseTypedefRecyclerAdapter<BasicItem>
         implements AdapterContract.Model<BasicItem>, AdapterContract.View {
 
-    public BasicAdapterSimple(@NotNull Context context) {
+    public BasicAdapterSimpleDefinition(@NotNull Context context) {
         super(context);
     }
 
     @Override
-    public BaseRecyclerViewHolder<BasicItem> onCreateViewHolder(ViewGroup parent, int viewType) {
+    public BaseViewHolder<BasicItem> onCreateViewHolder(ViewGroup parent, int viewType) {
         return new BasicViewHolder(parent, this);
     }
 

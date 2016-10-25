@@ -3,11 +3,11 @@
     package="tech.thdev.androidrecyclerview">
 
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:name=".MyApplication"
         android:theme="@style/AppTheme">
         <activity
             android:name=".view.main.MainActivity"
@@ -22,8 +22,8 @@
 
         <activity
             android:name=".view.basic.BasicActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:label="@string/label_activity_basic">
+            android:label="@string/label_activity_basic"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -31,24 +31,36 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".view.image.ImageListActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:label="@string/label_activity_image">
+        <activity
+            android:name=".view.image.ImageListActivity"
+            android:label="@string/label_activity_image"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="tech.thdev.androidrecyclerview.SAMPLE_CODE" />
             </intent-filter>
-            </activity>
-        <activity android:name=".view.design.image.CustomScrollImageActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:label="@string/label_activity_custom_scroll_image">
+        </activity>
+        <activity
+            android:name=".view.design.image.CustomScrollImageActivity"
+            android:label="@string/label_activity_custom_scroll_image"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="tech.thdev.androidrecyclerview.SAMPLE_CODE" />
             </intent-filter>
-            </activity>
+        </activity>
+        <activity
+            android:name=".view.hfsample.ImageHFActivity"
+            android:label="@string/label_activity_header_footer_sample"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="tech.thdev.androidrecyclerview.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

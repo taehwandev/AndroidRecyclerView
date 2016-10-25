@@ -18,7 +18,7 @@ interface BaseRecyclerModel<ITEM> {
 
     fun removeItem(position: Int)
 
-    fun getItem(position: Int): Any?
+    fun getItem(position: Int): ITEM?
 
     fun getItemRealCount(): Int
 }
