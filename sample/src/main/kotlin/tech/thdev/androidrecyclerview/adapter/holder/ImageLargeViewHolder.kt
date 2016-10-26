@@ -10,7 +10,7 @@ import io.reactivex.schedulers.Schedulers
 import tech.thdev.androidrecyclerview.R
 import tech.thdev.androidrecyclerview.data.Image
 import tech.thdev.support.widget.adapter.simple.BaseTypedefRecyclerAdapter
-import tech.thdev.support.widget.adapter.PrivateRecyclerAdapter
+import tech.thdev.support.widget.adapter.AbstractRecyclerAdapter
 import tech.thdev.support.widget.adapter.simple.BaseSimpleRecyclerAdapter
 import tech.thdev.support.widget.adapter.simple.holder.BaseViewHolder
 

@@ -2,7 +2,7 @@ package tech.thdev.support.widget.adapter
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView
-import tech.thdev.support.widget.adapter.model.BaseRecyclerModel
+import tech.thdev.support.widget.adapter.simple.model.BaseRecyclerModel
 import java.util.*
 
 /**
@@ -11,7 +11,7 @@ import java.util.*
  * Default RecyclerAdapter
  */
 
-abstract class PrivateRecyclerAdapter<ITEM, VIEW_TYPE : RecyclerView.ViewHolder?>(open val context: Context) :
+abstract class AbstractRecyclerAdapter<ITEM, VIEW_TYPE : RecyclerView.ViewHolder?>(open val context: Context) :
         RecyclerView.Adapter<VIEW_TYPE>(), BaseRecyclerModel<ITEM> {
 
     private val itemList: MutableList<ITEM> = ArrayList()
@@ -49,5 +49,5 @@ abstract class PrivateRecyclerAdapter<ITEM, VIEW_TYPE : RecyclerView.ViewHolder?
 
     override fun getItem(position: Int): ITEM? = itemList[position]
 
-    override fun getItemRealCount() = itemCount
+    override fun getItems() = itemList
 }

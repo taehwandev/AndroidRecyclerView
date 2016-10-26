@@ -9,15 +9,15 @@ import tech.thdev.androidrecyclerview.adapter.hfsample.model.ImageHFAdapterContr
 import tech.thdev.androidrecyclerview.adapter.holder.ImageLargeViewHolder
 import tech.thdev.androidrecyclerview.data.FlipItems
 import tech.thdev.androidrecyclerview.data.Image
-import tech.thdev.support.widget.adapter.header_view.BaseHFTypedefRecyclerAdapter
+import tech.thdev.support.widget.adapter.header_footer.BaseHeaderFooterTypedefRecyclerAdapter
 import tech.thdev.support.widget.adapter.simple.BaseSimpleRecyclerAdapter
 
 /**
  * Created by Tae-hwan on 24/10/2016.
  */
 
-class ImageHFSample(context: Context) :
-        BaseHFTypedefRecyclerAdapter<Image, FlipItems, Any>(context),
+class ImageHeaderFooterSample(context: Context) :
+        BaseHeaderFooterTypedefRecyclerAdapter<Image, FlipItems, Any>(context),
         ImageHFAdapterContract.Model, ImageHFAdapterContract.View{
 
     override var headerItem: FlipItems? = null

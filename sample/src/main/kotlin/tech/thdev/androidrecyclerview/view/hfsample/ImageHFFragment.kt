@@ -5,7 +5,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.widget.Toast
 import tech.thdev.androidrecyclerview.R
-import tech.thdev.androidrecyclerview.adapter.hfsample.ImageHFSample
+import tech.thdev.androidrecyclerview.adapter.hfsample.ImageHeaderFooterSample
 import tech.thdev.androidrecyclerview.data.source.image.ImagesRepository
 import tech.thdev.androidrecyclerview.view.hfsample.presenter.ImageHFContract
 import tech.thdev.androidrecyclerview.view.hfsample.presenter.ImageHFPresenter
@@ -36,7 +36,7 @@ class ImageHFFragment :
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val imageListAdapter = ImageHFSample(context)
+        val imageListAdapter = ImageHeaderFooterSample(context)
 
         presenter?.listContractModel = imageListAdapter
         presenter?.listContractView = imageListAdapter

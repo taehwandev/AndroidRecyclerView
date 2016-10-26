@@ -6,7 +6,7 @@ import tech.thdev.androidrecyclerview.adapter.main.holder.MainListViewHolder
 import tech.thdev.androidrecyclerview.adapter.model.MainAdapterContract
 import tech.thdev.androidrecyclerview.data.MainItem
 import tech.thdev.androidrecyclerview.listener.OnItemClickListener
-import tech.thdev.support.widget.adapter.PrivateRecyclerAdapter
+import tech.thdev.support.widget.adapter.AbstractRecyclerAdapter
 import tech.thdev.support.widget.adapter.simple.BaseTypedefRecyclerAdapter
 import tech.thdev.support.widget.adapter.simple.holder.BaseViewHolder
 
