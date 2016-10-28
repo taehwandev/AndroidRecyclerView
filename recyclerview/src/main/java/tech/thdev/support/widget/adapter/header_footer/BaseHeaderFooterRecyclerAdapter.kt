@@ -17,13 +17,21 @@ abstract class BaseHeaderFooterRecyclerAdapter<ITEM, HEADER, FOOTER>(context: Co
     private val VIEW_TYPE_HEADER = -100
     private val VIEW_TYPE_FOOTER = -200
 
+    /**
+     * Header use info
+     */
     private var isHeader = false
-    private var isFooter = false
 
     override var headerItem: HEADER? = null
         set(value) {
             isHeader = true
         }
+
+    /**
+     * Footer use info
+     */
+    private var isFooter = false
+
     override var footerItem: FOOTER? = null
         set(value) {
             isFooter = true
@@ -51,67 +59,11 @@ abstract class BaseHeaderFooterRecyclerAdapter<ITEM, HEADER, FOOTER>(context: Co
      */
     abstract fun onCreateFooterViewHolder(parent: ViewGroup?, viewType: Int): RecyclerView.ViewHolder
 
-    override fun getViewType(position: Int): Int {
-        throw UnsupportedOperationException("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    /**
-     * @return Header item position
-     */
-    private fun getHeaderItem(position: Int)
-            = if (position == 0 && headerItem != null) VIEW_TYPE_HEADER else position
-
-    /**
-     * @return Footer item position
-     */
-    private fun getFooterItem(position: Int)
-            = if (position == itemCount - 1 && footerItem != null) VIEW_TYPE_FOOTER else position
-
-
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder?, position: Int) {
-        if (holder == null) return
-
-        when (getFooterItem(getHeaderItem(position))) {
-            VIEW_TYPE_HEADER -> {
-                headerItem
-                        ?.let { (holder as BaseViewHolder<HEADER>).onViewHolder(it, position) }
-                        ?: (holder as BaseViewHolder<HEADER>).onViewHolder(position)
-            }
-            VIEW_TYPE_FOOTER -> {
-                footerItem
-                        ?.let { (holder as BaseViewHolder<FOOTER>).onViewHolder(it, position) }
-                        ?: (holder as BaseViewHolder<FOOTER>).onViewHolder(position)
-            }
-            else -> {
-                getItem(position)
-                        ?.let { (holder as BaseViewHolder<ITEM>).onViewHolder(it, position) }
-                        ?: (holder as BaseViewHolder<ITEM>).onViewHolder(position)
-            }
-        }
-    }
-
-    /**
-     * Header/Footer size contained
-     */
     override fun getItemCount(): Int {
         var count = super.getItemCount()
-        headerItem?.let { ++count }
-        footerItem?.let { ++count }
+        if (isHeader) ++count
+        if (isFooter) ++count
         return count
-    }
-
-    override fun getItemViewType(position: Int)
-            = when (getFooterItem(getHeaderItem(position))) {
-        VIEW_TYPE_HEADER -> VIEW_TYPE_HEADER
-        VIEW_TYPE_FOOTER -> VIEW_TYPE_FOOTER
-        else -> getViewType(position)
-    }
-
-    override fun clear() {
-        headerItem = null
-        footerItem = null
-
-        super.clear()
     }
 
     override fun getRealItemCount() = super.getItemCount()
