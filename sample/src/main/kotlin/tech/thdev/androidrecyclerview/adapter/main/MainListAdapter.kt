@@ -29,7 +29,7 @@ class MainListAdapter(context: Context) :
     }
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): BaseViewHolder<MainItem> {
-        return MainListViewHolder(parent, MainListAdapter@this)
+        return MainListViewHolder(parent, this)
     }
 
     override fun reload() {

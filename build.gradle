@@ -9,15 +9,18 @@ buildscript {
         butterKnifeVersion = '8.4.0'
 
         // Rx
-        rxandroidVersion = "2.0.0-RC1"
-        rxjavaVersion = "2.0.0.-RC3"
+        rxandroidVersion = '2.0.0'
+        rxjavaVersion = '2.0.0'
+
+        // Image loader
+        glideVersion = '3.7.0'
     }
 
     repositories {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.2.1'
+        classpath 'com.android.tools.build:gradle:2.2.2'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 
         // ButterKnife

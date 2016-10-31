@@ -11,5 +11,6 @@ abstract class BaseHeaderFooterTypedefRecyclerAdapter<
         ITEM : BaseItem, HEADER, FOOTER>(context: Context) :
         BaseHeaderFooterRecyclerAdapter<ITEM, HEADER, FOOTER>(context) {
 
-    override fun getViewType(position: Int) = getItem(position)?.let { it.viewType } ?: -1
+    override fun onItemViewType(position: Int)
+            = getItem(getRealItemPosition(position))?.let { it.viewType } ?: -1
 }

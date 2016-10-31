@@ -27,6 +27,8 @@ interface ImageHFContract {
 
         fun loadImageList()
 
-        fun loadHeaderImageList()
+        fun addHeaderImageList()
+
+        fun addFooterItem()
     }
 }

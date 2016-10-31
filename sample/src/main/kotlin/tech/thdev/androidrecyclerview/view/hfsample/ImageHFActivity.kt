@@ -20,7 +20,7 @@ class ImageHFActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_fragment_view)
 
-        collapsingToolbar.title = getString(R.string.label_activity_image)
+        collapsingToolbar.title = getString(R.string.label_activity_header_footer_sample)
 
         replaceContentFragment(R.id.frame_layout, ImageHFFragment.getInstance())
     }

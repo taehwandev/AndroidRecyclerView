@@ -14,8 +14,6 @@ abstract class BaseSimpleRecyclerAdapter<ITEM>(context: Context) :
         AbstractRecyclerAdapter<ITEM, BaseViewHolder<ITEM>>(context) {
 
     override fun onBindViewHolder(holder: BaseViewHolder<ITEM>?, position: Int) {
-        getItem(position)
-                ?.let { holder?.onViewHolder(it, position) }
-                ?: holder?.onViewHolder(position)
+        holder?.onViewHolder(getItem(position), position)
     }
 }

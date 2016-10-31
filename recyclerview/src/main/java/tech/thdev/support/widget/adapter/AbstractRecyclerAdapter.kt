@@ -16,12 +16,13 @@ abstract class AbstractRecyclerAdapter<ITEM, VIEW_TYPE : RecyclerView.ViewHolder
 
     private val itemList: MutableList<ITEM> = ArrayList()
 
-    abstract fun getViewType(position: Int): Int
+    abstract fun onItemViewType(position: Int): Int
 
     override fun getItemViewType(position: Int)
-            = getViewType(position)
+            = onItemViewType(position)
 
-    override fun getItemCount() = itemList.size
+    override fun getItemCount()
+            = itemList.size
 
     override fun addItem(item: ITEM) {
         itemList.add(item)
@@ -47,7 +48,11 @@ abstract class AbstractRecyclerAdapter<ITEM, VIEW_TYPE : RecyclerView.ViewHolder
         itemList.removeAt(position)
     }
 
-    override fun getItem(position: Int): ITEM? = itemList[position]
+    /**
+     * GetItem null or ITEM
+     */
+    override fun getItem(position: Int)
+            = itemList.getOrNull(position)
 
     override fun getItems() = itemList
 }

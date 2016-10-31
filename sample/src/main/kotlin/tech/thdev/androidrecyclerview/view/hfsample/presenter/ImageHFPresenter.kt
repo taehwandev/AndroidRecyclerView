@@ -3,7 +3,6 @@ package tech.thdev.androidrecyclerview.view.hfsample.presenter
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import tech.thdev.androidrecyclerview.adapter.hfsample.model.ImageHFAdapterContract
-import tech.thdev.androidrecyclerview.adapter.model.ImageAdapterContract
 import tech.thdev.androidrecyclerview.data.FlipItems
 import tech.thdev.androidrecyclerview.data.source.image.ImagesRepository
 import tech.thdev.base.presenter.AbstractPresenter
@@ -26,18 +25,25 @@ class ImageHFPresenter : AbstractPresenter<ImageHFContract.View>(), ImageHFContr
                 ?.observeOn(AndroidSchedulers.mainThread())
                 ?.doOnComplete {
                     listContractView?.reload()
+                    view?.loadSuccess()
                 }
                 ?.subscribe {
                     listContractModel?.addItem(it)
                 }
     }
 
-    override fun loadHeaderImageList() {
+    override fun addHeaderImageList() {
         imageRepository?.getAllImages()
                 ?.subscribeOn(Schedulers.io())
                 ?.map(::FlipItems)
                 ?.subscribe {
-                    listContractModel?.addHeaderItems(it)
+                    listContractModel?.headerItem = it
                 }
+        listContractView?.reload()
+    }
+
+    override fun addFooterItem() {
+        listContractModel?.footerItem = null
+        listContractView?.reload()
     }
 }

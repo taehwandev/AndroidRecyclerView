@@ -10,6 +10,6 @@ import tech.thdev.support.widget.data.BaseItem
  */
 abstract class BaseTypedefRecyclerAdapter<ITEM : BaseItem>(context: Context) : BaseSimpleRecyclerAdapter<ITEM>(context) {
 
-    override fun getViewType(position: Int)
+    override fun onItemViewType(position: Int)
             = getItem(position)?.let { it.viewType } ?: -1
 }

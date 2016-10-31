@@ -128,7 +128,7 @@ public class OnRecyclerScrollListener extends RecyclerView.OnScrollListener {
                         return aBoolean;
                     }
                 })
-                .doOnCancel(new Action() {
+                .doOnDispose(new Action() {
                     @Override
                     public void run() throws Exception {
                         animObservableList.clear();

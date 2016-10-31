@@ -9,8 +9,6 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import tech.thdev.androidrecyclerview.R
 import tech.thdev.androidrecyclerview.data.Image
-import tech.thdev.support.widget.adapter.simple.BaseTypedefRecyclerAdapter
-import tech.thdev.support.widget.adapter.AbstractRecyclerAdapter
 import tech.thdev.support.widget.adapter.simple.BaseSimpleRecyclerAdapter
 import tech.thdev.support.widget.adapter.simple.holder.BaseViewHolder
 
@@ -33,17 +31,18 @@ class ImageLargeViewHolder(parent: ViewGroup?, adapterSimple: BaseSimpleRecycler
         itemView?.findViewById(R.id.tv_message) as TextView
     }
 
-    override fun onViewHolder(item: Image, position: Int) {
+    override fun onViewHolder(item: Image?, position: Int) {
         Observable.just(item)
                 .subscribeOn(Schedulers.newThread())
+                .filter { item != null }
                 .map {
-                    BitmapFactory.decodeResource(context.resources, it.img)
+                    BitmapFactory.decodeResource(context?.resources, it!!.img)
                 }
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe {
                     image.setImageBitmap(it)
                 }
-        tvTitle.text = item.title
-        tvMessage.text = item.message
+        tvTitle.text = item?.title
+        tvMessage.text = item?.message
     }
 }

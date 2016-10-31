@@ -5,12 +5,10 @@ import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.widget.Toast
 import tech.thdev.androidrecyclerview.R
-import tech.thdev.androidrecyclerview.adapter.hfsample.ImageHeaderFooterSample
+import tech.thdev.androidrecyclerview.adapter.hfsample.ImageHeaderFooterSampleAdapter
 import tech.thdev.androidrecyclerview.data.source.image.ImagesRepository
 import tech.thdev.androidrecyclerview.view.hfsample.presenter.ImageHFContract
 import tech.thdev.androidrecyclerview.view.hfsample.presenter.ImageHFPresenter
-import tech.thdev.androidrecyclerview.view.image.ImageListFragment
-import tech.thdev.androidrecyclerview.view.image.presenter.ImageListContract
 import tech.thdev.base.view.BasePresenterFragment
 
 /**
@@ -19,7 +17,7 @@ import tech.thdev.base.view.BasePresenterFragment
 
 class ImageHFFragment :
         BasePresenterFragment<ImageHFContract.View, ImageHFContract.Presenter>(),
-        ImageListContract.View {
+        ImageHFContract.View {
 
     private val recyclerView by lazy {
         view?.findViewById(R.id.recycler_view) as RecyclerView
@@ -28,7 +26,7 @@ class ImageHFFragment :
     override fun onCreatePresenter() = ImageHFPresenter()
 
     companion object {
-        fun getInstance() = ImageListFragment()
+        fun getInstance() = ImageHFFragment()
     }
 
     override fun getLayout() = R.layout.fragment_recycler_view
@@ -36,7 +34,7 @@ class ImageHFFragment :
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val imageListAdapter = ImageHeaderFooterSample(context)
+        val imageListAdapter = ImageHeaderFooterSampleAdapter(context)
 
         presenter?.listContractModel = imageListAdapter
         presenter?.listContractView = imageListAdapter
@@ -45,7 +43,8 @@ class ImageHFFragment :
 
         recyclerView.adapter = imageListAdapter
 
-        presenter?.loadHeaderImageList()
+        presenter?.addHeaderImageList()
+        presenter?.addFooterItem()
         presenter?.loadImageList()
     }
 

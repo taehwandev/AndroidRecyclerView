@@ -23,14 +23,14 @@ public class AnimatorEventSubScribe implements ObservableOnSubscribe<ItemAnimato
         final Animator.AnimatorListener listener = new Animator.AnimatorListener() {
             @Override
             public void onAnimationStart(Animator animation) {
-                if (!e.isCancelled()) {
+                if (!e.isDisposed()) {
                     e.onNext(ItemAnimatorEvent.eventCreate(animation, ItemAnimatorEvent.ANIM_START));
                 }
             }
 
             @Override
             public void onAnimationEnd(Animator animation) {
-                if (!e.isCancelled()) {
+                if (!e.isDisposed()) {
                     e.onNext(ItemAnimatorEvent.eventCreate(animation, ItemAnimatorEvent.ANIM_END));
                 }
             }
