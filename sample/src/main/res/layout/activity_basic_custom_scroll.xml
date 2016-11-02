@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".view.design.image.CustomScrollImageActivity">
+    tools:context=".view.custom_scroll.basic.BasicCustomScrollActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -21,7 +21,7 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_custom_scroll_image" />
+    <include layout="@layout/content_basic_custom_scroll" />
 
     <RelativeLayout
         android:id="@+id/rl_bottom_layout"

@@ -1,7 +1,8 @@
-package tech.thdev.androidrecyclerview.view.design.image;
+package tech.thdev.androidrecyclerview.view.custom_scroll.basic;
 
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.RelativeLayout;
 
@@ -11,8 +12,8 @@ import butterknife.BindView;
 import tech.thdev.androidrecyclerview.R;
 import tech.thdev.androidrecyclerview.adapter.image.CustomScrollImageAdapterSimpleDefinition;
 import tech.thdev.androidrecyclerview.data.source.image.ImagesMetaLocalRepository;
-import tech.thdev.androidrecyclerview.view.design.image.presenter.CustomScrollImageContract;
-import tech.thdev.androidrecyclerview.view.design.image.presenter.CustomScrollImagePresenter;
+import tech.thdev.androidrecyclerview.view.custom_scroll.basic.presenter.BasicCustomScrollContract;
+import tech.thdev.androidrecyclerview.view.custom_scroll.basic.presenter.BasicCustomScrollPresenter;
 import tech.thdev.androidrecyclerview.view.scroll.anim.OnRecyclerScrollListener;
 import tech.thdev.base.view.BasePresenterFragment;
 
@@ -20,33 +21,29 @@ import tech.thdev.base.view.BasePresenterFragment;
  * Created by Tae-hwan on 18/10/2016.
  */
 
-public class CustomScrollImageFragment
-        extends BasePresenterFragment<CustomScrollImageContract.View, CustomScrollImageContract.Presenter>
-        implements CustomScrollImageContract.View {
+public class BasicCustomScrollFragment
+        extends BasePresenterFragment<BasicCustomScrollContract.View, BasicCustomScrollContract.Presenter>
+        implements BasicCustomScrollContract.View {
 
     @BindView(R.id.recycler_view)
-    RecyclerView recyclerView;
+    RecyclerView mRecyclerView;
 
     private RelativeLayout rlHead;
     private RelativeLayout rlBottomLayout;
 
-    private CustomScrollImageFragment() {
-
-    }
-
-    public static CustomScrollImageFragment getInstance() {
-        return new CustomScrollImageFragment();
+    public static BasicCustomScrollFragment getInstance() {
+        return new BasicCustomScrollFragment();
     }
 
     @Nullable
     @Override
-    public CustomScrollImageContract.Presenter onCreatePresenter() {
-        return new CustomScrollImagePresenter();
+    public BasicCustomScrollContract.Presenter onCreatePresenter() {
+        return new BasicCustomScrollPresenter();
     }
 
     @Override
     public int getLayout() {
-        return R.layout.fragment_recycler_view;
+        return R.layout.fragment_basic_custom_scroll;
     }
 
     @Override
@@ -62,8 +59,8 @@ public class CustomScrollImageFragment
         getPresenter().setAdapterModel(adapter);
         getPresenter().setMetaLocalRepository(ImagesMetaLocalRepository.getInstance());
 
-        recyclerView.setAdapter(adapter);
-        recyclerView.addOnScrollListener(onCustomScrollListener);
+        mRecyclerView.setAdapter(adapter);
+        mRecyclerView.addOnScrollListener(onCustomScrollListener);
 
         rlHead.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED);
         onCustomScrollListener.addView(rlHead, -rlHead.getMeasuredHeight());
@@ -92,9 +89,9 @@ public class CustomScrollImageFragment
     @Override
     public void onDestroy() {
         super.onDestroy();
-        if (recyclerView != null) {
+        if (mRecyclerView != null) {
             onCustomScrollListener.destroy();
-            recyclerView.removeOnScrollListener(onCustomScrollListener);
+            mRecyclerView.removeOnScrollListener(onCustomScrollListener);
         }
     }
 
@@ -108,6 +105,9 @@ public class CustomScrollImageFragment
         @Override
         public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
             super.onScrolled(recyclerView, dx, dy);
+
+            Log.d("TAG", "computeHorizontalScrollOffset " + recyclerView.computeVerticalScrollOffset());
+            Log.e("TAG", "-------------------");
         }
     };
 }

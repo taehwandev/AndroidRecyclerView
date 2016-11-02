@@ -1,14 +1,14 @@
-package tech.thdev.androidrecyclerview.view.hfsample
+package tech.thdev.androidrecyclerview.view.header_footer.basic
 
 import android.os.Bundle
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.widget.Toast
 import tech.thdev.androidrecyclerview.R
-import tech.thdev.androidrecyclerview.adapter.hfsample.ImageHeaderFooterSampleAdapter
+import tech.thdev.androidrecyclerview.adapter.header_footer.ImageHeaderFooterSampleAdapter
 import tech.thdev.androidrecyclerview.data.source.image.ImagesRepository
-import tech.thdev.androidrecyclerview.view.hfsample.presenter.ImageHFContract
-import tech.thdev.androidrecyclerview.view.hfsample.presenter.ImageHFPresenter
+import tech.thdev.androidrecyclerview.view.header_footer.basic.presenter.ImageHFContract
+import tech.thdev.androidrecyclerview.view.header_footer.basic.presenter.ImageHFPresenter
 import tech.thdev.base.view.BasePresenterFragment
 
 /**
@@ -29,7 +29,7 @@ class ImageHFFragment :
         fun getInstance() = ImageHFFragment()
     }
 
-    override fun getLayout() = R.layout.fragment_recycler_view
+    override fun getLayout() = R.layout.fragment_basic_custom_scroll
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

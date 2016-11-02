@@ -1,35 +1,39 @@
-package tech.thdev.androidrecyclerview.view.design.image.presenter;
+package tech.thdev.androidrecyclerview.view.custom_scroll.header_footer.presenter;
 
 import java.util.List;
+import java.util.Objects;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Action;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
+import tech.thdev.androidrecyclerview.R;
 import tech.thdev.androidrecyclerview.adapter.model.AdapterContract;
+import tech.thdev.androidrecyclerview.adapter.model.AdapterHeaderFooterContract;
 import tech.thdev.androidrecyclerview.data.LocalImage;
 import tech.thdev.androidrecyclerview.data.source.image.ImagesMetaLocalRepository;
+import tech.thdev.androidrecyclerview.view.custom_scroll.basic.presenter.BasicCustomScrollContract;
 import tech.thdev.base.presenter.AbstractPresenter;
 
 /**
  * Created by Tae-hwan on 18/10/2016.
  */
 
-public class CustomScrollImagePresenter extends AbstractPresenter<CustomScrollImageContract.View> implements CustomScrollImageContract.Presenter {
+public class CustomScrollHeaderFooterPresenter extends AbstractPresenter<CustomScrollHeaderFooterContract.View> implements CustomScrollHeaderFooterContract.Presenter {
 
-    private AdapterContract.View adapterView;
-    private AdapterContract.Model<LocalImage> adapterModel;
+    private AdapterHeaderFooterContract.View adapterView;
+    private AdapterHeaderFooterContract.Model<LocalImage, LocalImage, Objects> adapterModel;
 
     private ImagesMetaLocalRepository metaLocalRepository;
 
     @Override
-    public void setAdapterView(AdapterContract.View adapterView) {
+    public void setAdapterView(AdapterHeaderFooterContract.View adapterView) {
         this.adapterView = adapterView;
     }
 
     @Override
-    public void setAdapterModel(AdapterContract.Model<LocalImage> adapterModel) {
+    public void setAdapterModel(AdapterHeaderFooterContract.Model<LocalImage, LocalImage, Objects> adapterModel) {
         this.adapterModel = adapterModel;
     }
 
@@ -39,7 +43,7 @@ public class CustomScrollImagePresenter extends AbstractPresenter<CustomScrollIm
     }
 
     @Override
-    public void updateImage() {
+    public void loadImage() {
         metaLocalRepository.getAllImages()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -76,5 +80,15 @@ public class CustomScrollImagePresenter extends AbstractPresenter<CustomScrollIm
                         getView().loadFail();
                     }
                 });
+    }
+
+    @Override
+    public void loadHeader() {
+        adapterModel.setHeaderItem(null);
+    }
+
+    @Override
+    public void loadFooter() {
+        adapterModel.setFooterItem(null);
     }
 }

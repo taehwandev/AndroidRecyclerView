@@ -20,7 +20,8 @@ abstract class BaseHeaderFooterRecyclerAdapter<ITEM, HEADER, FOOTER>(context: Co
     /**
      * Header use info
      */
-    private var isHeader = false
+    protected var isHeader = false
+        private set
 
     override var headerItem: HEADER? = null
         set(value) {
@@ -30,7 +31,8 @@ abstract class BaseHeaderFooterRecyclerAdapter<ITEM, HEADER, FOOTER>(context: Co
     /**
      * Footer use info
      */
-    private var isFooter = false
+    protected var isFooter = false
+        private set
 
     override var footerItem: FOOTER? = null
         set(value) {
@@ -98,12 +100,12 @@ abstract class BaseHeaderFooterRecyclerAdapter<ITEM, HEADER, FOOTER>(context: Co
     /**
      * has header item
      */
-    protected fun hasHeaderItems(position: Int) = isHeader && position == 0
+    override fun hasHeaderItems(position: Int) = isHeader && position == 0
 
     /**
      * has footer item
      */
-    protected fun hasFooterItem(position: Int) = isFooter && position == itemCount - 1
+    override fun hasFooterItem(position: Int) = isFooter && position == itemCount - 1
 
     /**
      * Position without header

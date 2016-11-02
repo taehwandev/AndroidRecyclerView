@@ -3,6 +3,7 @@ package tech.thdev.androidrecyclerview.view.scroll.anim;
 import android.animation.ObjectAnimator;
 import android.support.annotation.IntDef;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
 import android.widget.Toast;
@@ -79,8 +80,10 @@ public class OnRecyclerScrollListener extends RecyclerView.OnScrollListener {
         super.onScrolled(recyclerView, dx, dy);
         if (dy < 0) { // UP
             startAnimation(SCROLL_UP);
+
         } else if (dy > 0) { // DOWN
             startAnimation(SCROLL_DOWN);
+
         } else {
             startAnimation(SCROLL_NONE);
         }
@@ -119,6 +122,7 @@ public class OnRecyclerScrollListener extends RecyclerView.OnScrollListener {
                                 ++count;
                             }
                         }
+                        Log.i("TAG", "-------- count " + count);
                         return count == objects.length;
                     }
                 })

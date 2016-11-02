@@ -42,7 +42,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.design.image.CustomScrollImageActivity"
+            android:name=".view.custom_scroll.basic.BasicCustomScrollActivity"
             android:label="@string/label_activity_custom_scroll_image"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -52,8 +52,18 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.hfsample.ImageHFActivity"
+            android:name=".view.header_footer.basic.ImageHFActivity"
             android:label="@string/label_activity_header_footer_sample"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="tech.thdev.androidrecyclerview.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".view.custom_scroll.header_footer.CustomScrollHeaderFooterActivity"
+            android:label="@string/label_activity_custom_scroll_image_header_footer"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

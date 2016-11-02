@@ -1,8 +1,8 @@
-package tech.thdev.androidrecyclerview.view.hfsample.presenter
+package tech.thdev.androidrecyclerview.view.header_footer.basic.presenter
 
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
-import tech.thdev.androidrecyclerview.adapter.hfsample.model.ImageHFAdapterContract
+import tech.thdev.androidrecyclerview.adapter.header_footer.model.ImageHFAdapterContract
 import tech.thdev.androidrecyclerview.data.FlipItems
 import tech.thdev.androidrecyclerview.data.source.image.ImagesRepository
 import tech.thdev.base.presenter.AbstractPresenter

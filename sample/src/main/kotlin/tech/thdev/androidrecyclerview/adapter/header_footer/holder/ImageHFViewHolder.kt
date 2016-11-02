@@ -1,4 +1,4 @@
-package tech.thdev.androidrecyclerview.adapter.hfsample.holder
+package tech.thdev.androidrecyclerview.adapter.header_footer.holder
 
 import android.graphics.BitmapFactory
 import android.support.v7.widget.RecyclerView

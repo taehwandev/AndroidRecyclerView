@@ -1,4 +1,4 @@
-package tech.thdev.androidrecyclerview.view.hfsample
+package tech.thdev.androidrecyclerview.view.header_footer.basic
 
 import android.os.Bundle
 import android.support.design.widget.CollapsingToolbarLayout

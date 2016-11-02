@@ -1,6 +1,6 @@
-package tech.thdev.androidrecyclerview.view.hfsample.presenter
+package tech.thdev.androidrecyclerview.view.header_footer.basic.presenter
 
-import tech.thdev.androidrecyclerview.adapter.hfsample.model.ImageHFAdapterContract
+import tech.thdev.androidrecyclerview.adapter.header_footer.model.ImageHFAdapterContract
 import tech.thdev.androidrecyclerview.data.source.image.ImagesRepository
 import tech.thdev.base.presenter.BasePresenter
 import tech.thdev.base.presenter.BaseView

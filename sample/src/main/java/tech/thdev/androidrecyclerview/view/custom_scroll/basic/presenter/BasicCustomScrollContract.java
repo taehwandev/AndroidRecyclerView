@@ -1,4 +1,4 @@
-package tech.thdev.androidrecyclerview.view.design.image.presenter;
+package tech.thdev.androidrecyclerview.view.custom_scroll.basic.presenter;
 
 import tech.thdev.androidrecyclerview.adapter.model.AdapterContract;
 import tech.thdev.androidrecyclerview.data.LocalImage;
@@ -10,7 +10,7 @@ import tech.thdev.base.presenter.BaseView;
  * Created by Tae-hwan on 18/10/2016.
  */
 
-public interface CustomScrollImageContract {
+public interface BasicCustomScrollContract {
 
     interface View extends BaseView {
         void showProgress();

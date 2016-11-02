@@ -15,4 +15,8 @@ interface BaseHeaderFooterRecyclerModel<ITEM, HEADER, FOOTER> : BaseRecyclerMode
      * Count except header/footer
      */
     fun getRealItemCount(): Int
+
+    fun hasHeaderItems(position: Int): Boolean
+
+    fun hasFooterItem(position: Int): Boolean
 }

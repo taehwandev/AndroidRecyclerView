@@ -1,4 +1,4 @@
-package tech.thdev.androidrecyclerview.adapter.hfsample.model
+package tech.thdev.androidrecyclerview.adapter.header_footer.model
 
 import tech.thdev.androidrecyclerview.data.FlipItems
 import tech.thdev.androidrecyclerview.data.Image

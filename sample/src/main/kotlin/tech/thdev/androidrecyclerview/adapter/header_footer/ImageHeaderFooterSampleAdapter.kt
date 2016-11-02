@@ -1,11 +1,11 @@
-package tech.thdev.androidrecyclerview.adapter.hfsample
+package tech.thdev.androidrecyclerview.adapter.header_footer
 
 import android.content.Context
 import android.view.ViewGroup
-import tech.thdev.androidrecyclerview.adapter.hfsample.holder.ImageHFFooterViewHolder
-import tech.thdev.androidrecyclerview.adapter.hfsample.holder.ImageHFViewHolder
-import tech.thdev.androidrecyclerview.adapter.hfsample.holder.ImageHFHeaderViewHolder
-import tech.thdev.androidrecyclerview.adapter.hfsample.model.ImageHFAdapterContract
+import tech.thdev.androidrecyclerview.adapter.header_footer.holder.ImageHFFooterViewHolder
+import tech.thdev.androidrecyclerview.adapter.header_footer.holder.ImageHFViewHolder
+import tech.thdev.androidrecyclerview.adapter.header_footer.holder.ImageHFHeaderViewHolder
+import tech.thdev.androidrecyclerview.adapter.header_footer.model.ImageHFAdapterContract
 import tech.thdev.androidrecyclerview.data.FlipItems
 import tech.thdev.androidrecyclerview.data.Image
 import tech.thdev.support.widget.adapter.header_footer.BaseHeaderFooterTypedefRecyclerAdapter
