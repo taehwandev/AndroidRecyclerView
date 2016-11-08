@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="tech.thdev.androidrecyclerview">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
@@ -62,7 +64,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".view.custom_scroll.header_footer.CustomScrollHeaderFooterActivity"
+        <activity
+            android:name=".view.custom_scroll.header_footer.CustomScrollHeaderFooterActivity"
             android:label="@string/label_activity_custom_scroll_image_header_footer"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>

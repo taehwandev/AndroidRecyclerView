@@ -44,13 +44,20 @@ dependencies {
     // Image loader
     compile "com.github.bumptech.glide:glide:$glideVersion"
 
+    // Retrofit
+    compile "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    compile "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    compile "com.squareup.retrofit2:adapter-rxjava:$retrofitVersion"
+
+    // OkHttp
+    compile "com.squareup.okhttp3:okhttp:$okhttpVersion"
+    compile "com.squareup.okhttp3:logging-interceptor:$okhttpVersion"
+
+
     // RX
     // https://github.com/ReactiveX/RxAndroid
     compile "io.reactivex.rxjava2:rxjava:$rxjavaVersion"
     compile "io.reactivex.rxjava2:rxandroid:$rxandroidVersion"
-
-    // image metadata
-    compile 'com.drewnoakes:metadata-extractor:2.9.1'
 
     compile project(':recyclerview')
 }

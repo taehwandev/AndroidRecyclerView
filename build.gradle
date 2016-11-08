@@ -14,6 +14,12 @@ buildscript {
 
         // Image loader
         glideVersion = '3.7.0'
+
+        // Retrofit
+        retrofitVersion = '2.1.0'
+
+        // OkHttp
+        okhttpVersion = '3.4.2'
     }
 
     repositories {

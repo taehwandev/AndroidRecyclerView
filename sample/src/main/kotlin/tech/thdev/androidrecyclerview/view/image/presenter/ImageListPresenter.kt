@@ -19,14 +19,14 @@ class ImageListPresenter : AbstractPresenter<ImageListContract.View>(), ImageLis
 
     override fun loadImageList() {
         imageRepository?.getAllImages()
-            ?.flatMapIterable { it }
-            ?.subscribeOn(Schedulers.io())
-            ?.observeOn(AndroidSchedulers.mainThread())
-            ?.doOnComplete {
-                listContractView?.reload()
-            }
-            ?.subscribe {
-                listContractModel?.addItem(it)
-            }
+                ?.flatMapIterable { it }
+                ?.subscribeOn(Schedulers.io())
+                ?.observeOn(AndroidSchedulers.mainThread())
+                ?.doOnComplete {
+                    listContractView?.reload()
+                }
+                ?.subscribe {
+                    listContractModel?.addItem(it)
+                }
     }
 }
