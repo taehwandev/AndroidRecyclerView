@@ -3,7 +3,7 @@
 buildscript {
     ext {
         supportLibraryVersion = '24.2.1'
-        kotlin_version = '1.0.4'
+        kotlin_version = '1.0.5'
 
         // ButterKnife
         butterKnifeVersion = '8.4.0'

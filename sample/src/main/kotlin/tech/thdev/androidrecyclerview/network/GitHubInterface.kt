@@ -1,8 +1,9 @@
 package tech.thdev.androidrecyclerview.network
 
-import io.reactivex.Observable
+import io.reactivex.Flowable
 import retrofit2.http.GET
 import retrofit2.http.Query
+import tech.thdev.androidrecyclerview.data.GitHubUserSearchResponse
 
 /**
  * Created by Tae-hwan on 08/11/2016.
@@ -15,5 +16,5 @@ interface GitHubInterface {
     fun searchUser(
             @Query(value = "q", encoded = true) userKeyword: String,
             @Query("page") page: Int,
-            @Query("per_page") perPage: Int): Observable<GitHubUser>
+            @Query("per_page") perPage: Int): Flowable<GitHubUserSearchResponse>
 }

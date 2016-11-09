@@ -1,4 +1,4 @@
-package tech.thdev.support.widget.adapter.simple.model
+package tech.thdev.support.widget.adapter.model
 
 /**
  * Created by Tae-hwan on 10/10/2016.

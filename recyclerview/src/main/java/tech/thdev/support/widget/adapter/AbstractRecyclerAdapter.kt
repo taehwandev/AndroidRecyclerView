@@ -2,7 +2,8 @@ package tech.thdev.support.widget.adapter
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView
-import tech.thdev.support.widget.adapter.simple.model.BaseRecyclerModel
+import tech.thdev.support.widget.adapter.model.BaseRecyclerModel
+import tech.thdev.support.widget.adapter.model.BaseRecyclerView
 import java.util.*
 
 /**
@@ -12,7 +13,7 @@ import java.util.*
  */
 
 abstract class AbstractRecyclerAdapter<ITEM, VIEW_TYPE : RecyclerView.ViewHolder?>(open val context: Context) :
-        RecyclerView.Adapter<VIEW_TYPE>(), BaseRecyclerModel<ITEM> {
+        RecyclerView.Adapter<VIEW_TYPE>(), BaseRecyclerModel<ITEM>, BaseRecyclerView {
 
     private val itemList: MutableList<ITEM> = ArrayList()
 

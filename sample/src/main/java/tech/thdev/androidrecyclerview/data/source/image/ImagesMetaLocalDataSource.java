@@ -1,17 +1,5 @@
 package tech.thdev.androidrecyclerview.data.source.image;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-
-import com.drew.imaging.ImageMetadataReader;
-import com.drew.metadata.Directory;
-import com.drew.metadata.Metadata;
-import com.drew.metadata.Tag;
-import com.drew.metadata.exif.ExifSubIFDDescriptor;
-import com.drew.metadata.exif.ExifSubIFDDirectory;
-
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;

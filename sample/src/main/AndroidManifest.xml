@@ -74,6 +74,16 @@
                 <category android:name="tech.thdev.androidrecyclerview.SAMPLE_CODE" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".view.user_search.GitHubUserSearchActivity"
+            android:label="@string/label_activity_network_github_kotlin"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="tech.thdev.androidrecyclerview.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

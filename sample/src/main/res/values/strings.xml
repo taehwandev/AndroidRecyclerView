@@ -5,6 +5,11 @@
     <string name="label_activity_basic">Basic/<b>Basic list view</b></string>
     <string name="label_activity_image">Design/<b>Image list view - Kotlin</b></string>
     <string name="label_activity_custom_scroll_image">Design/<b>Custom scroll image list - Java</b></string>
+
+    <!-- Header Footer -->
     <string name="label_activity_header_footer_sample">HeaderFooter/<b>Basic - kotlin</b></string>
     <string name="label_activity_custom_scroll_image_header_footer">HeaderFooter/<b>Custom scroll - Java</b></string>
+
+    <!-- Network Sample -->
+    <string name="label_activity_network_github_kotlin">Network Sample/<b>GitHub User Search Sample - kotlin</b></string>
 </resources>

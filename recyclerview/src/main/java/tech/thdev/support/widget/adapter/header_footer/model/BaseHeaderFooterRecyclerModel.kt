@@ -1,6 +1,6 @@
 package tech.thdev.support.widget.adapter.header_footer.model
 
-import tech.thdev.support.widget.adapter.simple.model.BaseRecyclerModel
+import tech.thdev.support.widget.adapter.model.BaseRecyclerModel
 
 /**
  * Created by Tae-hwan on 26/10/2016.

@@ -1,6 +1,6 @@
 package tech.thdev.androidrecyclerview.adapter.model;
 
-import tech.thdev.support.widget.adapter.simple.model.BaseRecyclerModel;
+import tech.thdev.support.widget.adapter.model.BaseRecyclerModel;
 import tech.thdev.support.widget.data.BaseItem;
 
 /**
