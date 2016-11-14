@@ -3,7 +3,7 @@ package tech.thdev.support.widget.adapter.header_footer
 import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.view.ViewGroup
-import tech.thdev.support.widget.adapter.AbstractRecyclerAdapter
+import tech.thdev.support.widget.adapter.AbstractArrayRecyclerAdapter
 import tech.thdev.support.widget.adapter.header_footer.model.BaseHeaderFooterRecyclerModel
 import tech.thdev.support.widget.adapter.simple.holder.BaseViewHolder
 
@@ -11,7 +11,7 @@ import tech.thdev.support.widget.adapter.simple.holder.BaseViewHolder
  * Created by Tae-hwan on 24/10/2016.
  */
 abstract class BaseHeaderFooterRecyclerAdapter<ITEM, HEADER, FOOTER>(context: Context) :
-        AbstractRecyclerAdapter<ITEM, RecyclerView.ViewHolder>(context),
+        AbstractArrayRecyclerAdapter<ITEM, RecyclerView.ViewHolder>(context),
         BaseHeaderFooterRecyclerModel<ITEM, HEADER, FOOTER> {
 
     protected val VIEW_TYPE_HEADER = -100
@@ -64,13 +64,12 @@ abstract class BaseHeaderFooterRecyclerAdapter<ITEM, HEADER, FOOTER>(context: Co
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder?, position: Int) {
         when (getItemViewType(position)) {
             VIEW_TYPE_HEADER ->
-                (holder as? BaseViewHolder<HEADER>)?.onViewHolder(headerItem, VIEW_TYPE_HEADER)
+                (holder as? BaseViewHolder<HEADER>)?.onBindViewHolder(headerItem, VIEW_TYPE_HEADER)
             VIEW_TYPE_FOOTER ->
-                (holder as? BaseViewHolder<FOOTER>)?.onViewHolder(footerItem, VIEW_TYPE_FOOTER)
+                (holder as? BaseViewHolder<FOOTER>)?.onBindViewHolder(footerItem, VIEW_TYPE_FOOTER)
             else -> {
                 val realPosition = getRealItemPosition(position)
-                (holder as? BaseViewHolder<ITEM>)?.
-                        onViewHolder(getItem(realPosition), realPosition)
+                (holder as? BaseViewHolder<ITEM>)?.onBindViewHolder(getItem(realPosition), realPosition)
             }
         }
     }
@@ -89,9 +88,11 @@ abstract class BaseHeaderFooterRecyclerAdapter<ITEM, HEADER, FOOTER>(context: Co
         if (hasHeaderItems(position)) {
             return VIEW_TYPE_HEADER
         }
+
         if (hasFooterItem(position)) {
             return VIEW_TYPE_FOOTER
         }
+
         return super.getItemViewType(getRealItemPosition(position))
     }
 

@@ -5,5 +5,7 @@ package tech.thdev.androidrecyclerview.contract
  */
 object Contract {
 
+    val CATEGORY_NAME = "tech.thdev.androidrecyclerview.SAMPLE_CODE"
+
     val KEY_EXTRA_PATH = "extra-path"
 }

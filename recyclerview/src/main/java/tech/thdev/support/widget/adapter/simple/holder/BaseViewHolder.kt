@@ -7,7 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import butterknife.ButterKnife
-import tech.thdev.support.widget.adapter.AbstractRecyclerAdapter
+import tech.thdev.support.widget.adapter.AbstractArrayRecyclerAdapter
 import tech.thdev.support.widget.listener.OnItemClickListener
 import tech.thdev.support.widget.listener.OnItemLongClickListener
 
@@ -21,23 +21,33 @@ abstract class BaseViewHolder<ITEM>(
 
     constructor(@LayoutRes layoutRes: Int, parent: ViewGroup?, adapter: RecyclerView.Adapter<*>)
             : this(adapter,
-            LayoutInflater.from((adapter as? AbstractRecyclerAdapter<*, *>)?.context).inflate(layoutRes, parent, false))
+            LayoutInflater.from((adapter as? AbstractArrayRecyclerAdapter<*, *>)?.context).inflate(layoutRes, parent, false))
 
+    /**
+     * ButterKnife definition
+     */
     init {
-        ButterKnife.bind(BaseViewHolder@ this, itemView)
+        ButterKnife.bind(BaseViewHolder@this, itemView)
     }
 
     /**
-     * NonNull item
+     * Definition of a holder
      */
-    abstract fun onViewHolder(item: ITEM?, position: Int)
+    abstract fun onBindViewHolder(item: ITEM?, position: Int)
+
 
     protected val context: Context?
-        get() = (adapter as? AbstractRecyclerAdapter<*, *>)?.context
+        get() = (adapter as? AbstractArrayRecyclerAdapter<*, *>)?.context
 
+    /**
+     * OnItemClick definition
+     */
     protected val onItemClick: OnItemClickListener?
-        get() = (adapter as? AbstractRecyclerAdapter<*, *>)?.onItemClickListener
+        get() = (adapter as? AbstractArrayRecyclerAdapter<*, *>)?.onItemClickListener
 
+    /**
+     * OnItemLongClick definition
+     */
     protected val onItemLongClick: OnItemLongClickListener?
-        get() = (adapter as? AbstractRecyclerAdapter<*, *>)?.onItemLongClickListener
+        get() = (adapter as? AbstractArrayRecyclerAdapter<*, *>)?.onItemLongClickListener
 }

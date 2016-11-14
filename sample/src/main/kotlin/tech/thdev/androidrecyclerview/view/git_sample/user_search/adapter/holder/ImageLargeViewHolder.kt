@@ -1,4 +1,4 @@
-package tech.thdev.androidrecyclerview.adapter.holder
+package tech.thdev.androidrecyclerview.view.git_sample.user_search.adapter.holder
 
 import android.graphics.BitmapFactory
 import android.view.ViewGroup
@@ -31,7 +31,7 @@ class ImageLargeViewHolder(parent: ViewGroup?, adapterSimple: BaseSimpleRecycler
         itemView?.findViewById(R.id.tv_message) as TextView
     }
 
-    override fun onViewHolder(item: Image?, position: Int) {
+    override fun onBindViewHolder(item: Image?, position: Int) {
         Observable.just(item)
                 .subscribeOn(Schedulers.newThread())
                 .filter { item != null }
@@ -42,6 +42,7 @@ class ImageLargeViewHolder(parent: ViewGroup?, adapterSimple: BaseSimpleRecycler
                 .subscribe {
                     image.setImageBitmap(it)
                 }
+
         tvTitle.text = item?.title
         tvMessage.text = item?.message
     }

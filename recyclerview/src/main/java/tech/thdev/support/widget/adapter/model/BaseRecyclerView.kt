@@ -6,6 +6,8 @@ import tech.thdev.support.widget.listener.OnItemLongClickListener
 
 /**
  * Created by Tae-hwan on 09/11/2016.
+ *
+ * RecyclerView.Adapter View definition
  */
 
 interface BaseRecyclerView {

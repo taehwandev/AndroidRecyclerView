@@ -21,6 +21,8 @@ class GitHubUserSearchPresenter : AbstractPresenter<GitHubUserSearchContract.Vie
     override var adapterModel: BaseRecyclerModel<GitHubUserSearchItem>? = null
     override var adapterView: BaseRecyclerView? = null
         set(value) {
+            field = value
+
             value?.setOnItemClickListener {
                 abstractRecyclerAdapter, i ->
                 run {

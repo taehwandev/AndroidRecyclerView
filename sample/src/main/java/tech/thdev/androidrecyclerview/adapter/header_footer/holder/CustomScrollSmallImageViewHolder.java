@@ -32,7 +32,7 @@ public class CustomScrollSmallImageViewHolder extends BaseViewHolder<LocalImage>
     }
 
     @Override
-    public void onViewHolder(@Nullable LocalImage localImage, int position) {
+    public void onBindViewHolder(@Nullable LocalImage localImage, int position) {
         if (localImage == null) return;
 
         tvMessage.setText(localImage.getTitle());

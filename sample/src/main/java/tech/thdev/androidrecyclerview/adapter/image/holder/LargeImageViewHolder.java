@@ -34,7 +34,7 @@ public class LargeImageViewHolder extends BaseViewHolder<LocalImage> {
     }
 
     @Override
-    public void onViewHolder(LocalImage localImage, int position) {
+    public void onBindViewHolder(LocalImage localImage, int position) {
         Observable.just(localImage)
                 .subscribeOn(Schedulers.newThread())
                 .map(new Function<LocalImage, Bitmap>() {

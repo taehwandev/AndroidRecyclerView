@@ -19,7 +19,7 @@ class ImageHFHeaderViewHolder(
         itemView?.findViewById(R.id.image_view) as ImageView
     }
 
-    override fun onViewHolder(item: FlipItems?, position: Int) {
+    override fun onBindViewHolder(item: FlipItems?, position: Int) {
         item?.let {
             imageView.setImageResource(it.imageList[0].img)
         }

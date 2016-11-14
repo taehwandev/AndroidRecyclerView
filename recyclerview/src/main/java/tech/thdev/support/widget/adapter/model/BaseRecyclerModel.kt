@@ -2,12 +2,14 @@ package tech.thdev.support.widget.adapter.model
 
 /**
  * Created by Tae-hwan on 10/10/2016.
+ *
+ * RecyclerView.Adapter model definition
  */
 
 interface BaseRecyclerModel<ITEM> {
 
     /**
-     * Item add...
+     * Item add
      */
     fun addItem(item: ITEM)
 
@@ -16,7 +18,7 @@ interface BaseRecyclerModel<ITEM> {
     fun addItems(items: List<ITEM>)
 
     /**
-     * Get item...
+     * Get item
      */
     fun getItem(position: Int): ITEM?
 

@@ -3,4 +3,10 @@
     <color name="colorPrimary">#546E7A</color>
     <color name="colorPrimaryDark">#37474F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="main_line_color">#AAA</color>
+
+    <color name="color_control_highlight">#90A4AE</color>
+    <color name="color_selected">#90A4AE</color>
+    <color name="black">#000</color>
 </resources>

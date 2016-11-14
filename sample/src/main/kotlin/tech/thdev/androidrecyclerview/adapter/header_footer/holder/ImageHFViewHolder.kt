@@ -31,7 +31,7 @@ class ImageHFViewHolder(parent: ViewGroup?, adapter: RecyclerView.Adapter<*>) :
         itemView?.findViewById(R.id.tv_message) as TextView
     }
 
-    override fun onViewHolder(item: Image?, position: Int) {
+    override fun onBindViewHolder(item: Image?, position: Int) {
         item?.let {
             Observable.just(it)
                     .subscribeOn(Schedulers.newThread())

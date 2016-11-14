@@ -1,7 +1,8 @@
 package tech.thdev.androidrecyclerview.adapter.model
 
-import tech.thdev.androidrecyclerview.data.MainItem
+import tech.thdev.androidrecyclerview.data.PrefixItem
 import tech.thdev.support.widget.adapter.model.BaseRecyclerModel
+import tech.thdev.support.widget.adapter.model.BaseRecyclerView
 
 /**
  * Created by Tae-hwan on 11/10/2016.
@@ -9,9 +10,7 @@ import tech.thdev.support.widget.adapter.model.BaseRecyclerModel
 
 interface MainAdapterContract {
 
-    interface View {
-        fun reload()
-    }
+    interface View : BaseRecyclerView
 
-    interface Model : BaseRecyclerModel<MainItem>
+    interface Model : BaseRecyclerModel<PrefixItem>
 }

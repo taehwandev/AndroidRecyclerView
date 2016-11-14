@@ -1,7 +1,7 @@
 package tech.thdev.support.widget.adapter.simple
 
 import android.content.Context
-import tech.thdev.support.widget.adapter.AbstractRecyclerAdapter
+import tech.thdev.support.widget.adapter.AbstractArrayRecyclerAdapter
 import tech.thdev.support.widget.adapter.simple.holder.BaseViewHolder
 
 /**
@@ -11,9 +11,9 @@ import tech.thdev.support.widget.adapter.simple.holder.BaseViewHolder
  */
 
 abstract class BaseSimpleRecyclerAdapter<ITEM>(context: Context) :
-        AbstractRecyclerAdapter<ITEM, BaseViewHolder<ITEM>>(context) {
+        AbstractArrayRecyclerAdapter<ITEM, BaseViewHolder<ITEM>>(context) {
 
     override fun onBindViewHolder(holder: BaseViewHolder<ITEM>?, position: Int) {
-        holder?.onViewHolder(getItem(position), position)
+        holder?.onBindViewHolder(getItem(position), position)
     }
 }

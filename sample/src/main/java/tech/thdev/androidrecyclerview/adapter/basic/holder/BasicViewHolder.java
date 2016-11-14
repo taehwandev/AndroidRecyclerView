@@ -27,7 +27,7 @@ public class BasicViewHolder extends BaseViewHolder<BasicItem> {
     }
 
     @Override
-    public void onViewHolder(@NotNull BasicItem item, int position) {
+    public void onBindViewHolder(BasicItem item, int position) {
         textView.setText(item.name);
     }
 

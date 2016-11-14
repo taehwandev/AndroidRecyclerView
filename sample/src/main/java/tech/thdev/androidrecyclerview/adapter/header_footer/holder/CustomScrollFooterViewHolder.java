@@ -21,7 +21,7 @@ public class CustomScrollFooterViewHolder extends BaseViewHolder<LocalImage> {
     }
 
     @Override
-    public void onViewHolder(@Nullable LocalImage localImage, int position) {
+    public void onBindViewHolder(@Nullable LocalImage localImage, int position) {
 
     }
 }

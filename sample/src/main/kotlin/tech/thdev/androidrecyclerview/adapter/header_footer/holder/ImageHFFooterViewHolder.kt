@@ -13,7 +13,7 @@ class ImageHFFooterViewHolder(
         parent: ViewGroup?, adapter: RecyclerView.Adapter<*>) :
         BaseViewHolder<Any>(R.layout.item_footer_image_sample, parent, adapter) {
 
-    override fun onViewHolder(item: Any?, position: Int) {
+    override fun onBindViewHolder(item: Any?, position: Int) {
 
     }
 }

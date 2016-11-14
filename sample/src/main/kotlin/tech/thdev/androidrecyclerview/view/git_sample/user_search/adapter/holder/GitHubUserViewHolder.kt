@@ -15,7 +15,7 @@ import tech.thdev.support.widget.adapter.simple.holder.BaseViewHolder
 class GitHubUserViewHolder(parent: ViewGroup?, adapter: GitHubUserSearchAdapter) :
         BaseViewHolder<GitHubUserSearchItem>(R.layout.item_git_hub_user, parent, adapter) {
 
-    override fun onViewHolder(item: GitHubUserSearchItem?, position: Int) {
+    override fun onBindViewHolder(item: GitHubUserSearchItem?, position: Int) {
         itemView?.let {
             with(it) {
                 Glide.with(context)
