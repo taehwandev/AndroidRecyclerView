@@ -1,14 +1,17 @@
-package tech.thdev.androidrecyclerview.view.user_search
+package tech.thdev.androidrecyclerview.view.git_sample.user_search
 
+import android.app.Activity
+import android.net.Uri
 import android.os.Bundle
+import android.support.customtabs.CustomTabsIntent
 import android.view.View
 import android.widget.Toast
 import kotlinx.android.synthetic.main.fragment_git_hub_user_search.*
 import tech.thdev.androidrecyclerview.R
 import tech.thdev.androidrecyclerview.data.source.github.GitHubUserRepository
-import tech.thdev.androidrecyclerview.view.user_search.adapter.GitHubUserSearchAdapter
-import tech.thdev.androidrecyclerview.view.user_search.presenter.GitHubUserSearchContract
-import tech.thdev.androidrecyclerview.view.user_search.presenter.GitHubUserSearchPresenter
+import tech.thdev.androidrecyclerview.view.git_sample.user_search.adapter.GitHubUserSearchAdapter
+import tech.thdev.androidrecyclerview.view.git_sample.user_search.presenter.GitHubUserSearchContract
+import tech.thdev.androidrecyclerview.view.git_sample.user_search.presenter.GitHubUserSearchPresenter
 import tech.thdev.base.view.BasePresenterFragment
 
 /**
@@ -43,5 +46,21 @@ class GitHubUserSearchFragment :
 
     override fun hideProgress() {
         Toast.makeText(context, "End", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun showDetailUserInfo(html_url: String) {
+        // Use a CustomTabsIntent.Builder to configure CustomTabsIntent.
+        // Once ready, call CustomTabsIntent.Builder.build() to create a CustomTabsIntent
+        // and launch the desired Url with CustomTabsIntent.launchUrl()
+        val builder = CustomTabsIntent.Builder()
+        // Changes the background color for the omnibox. colorInt is an int
+        // that specifies a Color.
+        builder.setToolbarColor(resources.getColor(R.color.colorPrimary))
+
+        builder.setStartAnimations(context, 0, 0)
+        builder.setExitAnimations(context, 0, 0)
+
+        val customTabsIntent = builder.build()
+        customTabsIntent.launchUrl(context as Activity, Uri.parse(html_url))
     }
 }

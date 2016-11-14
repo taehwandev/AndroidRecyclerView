@@ -1,9 +1,9 @@
-package tech.thdev.androidrecyclerview.view.user_search.adapter
+package tech.thdev.androidrecyclerview.view.git_sample.user_search.adapter
 
 import android.content.Context
 import android.view.ViewGroup
 import tech.thdev.androidrecyclerview.data.GitHubUserSearchItem
-import tech.thdev.androidrecyclerview.view.user_search.adapter.holder.GitHubUserViewHolder
+import tech.thdev.androidrecyclerview.view.git_sample.user_search.adapter.holder.GitHubUserViewHolder
 import tech.thdev.support.widget.adapter.simple.BaseTypedefRecyclerAdapter
 
 /**

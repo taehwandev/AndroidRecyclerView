@@ -1,4 +1,4 @@
-package tech.thdev.androidrecyclerview.view.user_search.presenter
+package tech.thdev.androidrecyclerview.view.git_sample.user_search.presenter
 
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
@@ -20,7 +20,14 @@ class GitHubUserSearchPresenter : AbstractPresenter<GitHubUserSearchContract.Vie
 
     override var adapterModel: BaseRecyclerModel<GitHubUserSearchItem>? = null
     override var adapterView: BaseRecyclerView? = null
-
+        set(value) {
+            value?.setOnItemClickListener {
+                abstractRecyclerAdapter, i ->
+                run {
+                    onListItemClick(i)
+                }
+            }
+        }
     override var gitHubUserRepository: GitHubUserRepository? = null
 
     override fun searchGitHubUser(name: String) {
@@ -39,5 +46,12 @@ class GitHubUserSearchPresenter : AbstractPresenter<GitHubUserSearchContract.Vie
                 ?.subscribe {
                     adapterModel?.addItem(it)
                 }
+    }
+
+    private fun onListItemClick(position: Int) {
+        val item = adapterModel?.getItem(position)
+        item?.html_url?.let {
+            view?.showDetailUserInfo(it)
+        }
     }
 }

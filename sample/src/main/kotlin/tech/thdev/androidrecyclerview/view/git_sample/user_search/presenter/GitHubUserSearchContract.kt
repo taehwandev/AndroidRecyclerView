@@ -1,4 +1,4 @@
-package tech.thdev.androidrecyclerview.view.user_search.presenter
+package tech.thdev.androidrecyclerview.view.git_sample.user_search.presenter
 
 import tech.thdev.androidrecyclerview.data.GitHubUserSearchItem
 import tech.thdev.androidrecyclerview.data.source.github.GitHubUserRepository
@@ -17,6 +17,7 @@ interface GitHubUserSearchContract {
         fun showProgress()
 
         fun hideProgress()
+        fun showDetailUserInfo(html_url: String)
     }
 
     interface Presenter : BasePresenter<View> {

@@ -75,7 +75,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".view.user_search.GitHubUserSearchActivity"
+        <activity android:name="tech.thdev.androidrecyclerview.view.git_sample.user_search.GitHubUserSearchActivity"
             android:label="@string/label_activity_network_github_kotlin"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>

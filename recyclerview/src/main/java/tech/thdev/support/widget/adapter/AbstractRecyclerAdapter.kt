@@ -4,6 +4,8 @@ import android.content.Context
 import android.support.v7.widget.RecyclerView
 import tech.thdev.support.widget.adapter.model.BaseRecyclerModel
 import tech.thdev.support.widget.adapter.model.BaseRecyclerView
+import tech.thdev.support.widget.listener.OnItemClickListener
+import tech.thdev.support.widget.listener.OnItemLongClickListener
 import java.util.*
 
 /**
@@ -14,6 +16,29 @@ import java.util.*
 
 abstract class AbstractRecyclerAdapter<ITEM, VIEW_TYPE : RecyclerView.ViewHolder?>(open val context: Context) :
         RecyclerView.Adapter<VIEW_TYPE>(), BaseRecyclerModel<ITEM>, BaseRecyclerView {
+
+    /**
+     * OnItemClickListener
+     */
+    override var onItemClickListener: OnItemClickListener? = null
+    override fun setOnItemClickListener(listener: (RecyclerView.Adapter<*>, Int) -> Unit) {
+        onItemClickListener = object : OnItemClickListener {
+            override fun onItemClick(adapter: RecyclerView.Adapter<*>, position: Int) {
+                listener(adapter, position)
+            }
+        }
+    }
+
+    /**
+     * OnItemLongClickListener
+     */
+    override var onItemLongClickListener: OnItemLongClickListener? = null
+    override fun setOnItemLongClickListener(listener: (RecyclerView.Adapter<*>, Int) -> Boolean) {
+        onItemLongClickListener = object : OnItemLongClickListener {
+            override fun onItemLongClick(adapter: RecyclerView.Adapter<*>, position: Int)
+                    = listener(adapter, position)
+        }
+    }
 
     private val itemList: MutableList<ITEM> = ArrayList()
 

@@ -1,11 +1,11 @@
-package tech.thdev.androidrecyclerview.view.user_search.adapter.holder
+package tech.thdev.androidrecyclerview.view.git_sample.user_search.adapter.holder
 
 import android.view.ViewGroup
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.item_git_hub_user.view.*
 import tech.thdev.androidrecyclerview.R
 import tech.thdev.androidrecyclerview.data.GitHubUserSearchItem
-import tech.thdev.androidrecyclerview.view.user_search.adapter.GitHubUserSearchAdapter
+import tech.thdev.androidrecyclerview.view.git_sample.user_search.adapter.GitHubUserSearchAdapter
 import tech.thdev.support.widget.adapter.simple.holder.BaseViewHolder
 
 /**
@@ -25,6 +25,8 @@ class GitHubUserViewHolder(parent: ViewGroup?, adapter: GitHubUserSearchAdapter)
 
                 tv_user_name.text = item?.login
             }
+
+            it.setOnClickListener { onItemClick?.onItemClick(adapter, position) }
         }
     }
 }

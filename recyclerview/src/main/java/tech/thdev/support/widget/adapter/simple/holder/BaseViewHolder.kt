@@ -8,6 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import butterknife.ButterKnife
 import tech.thdev.support.widget.adapter.AbstractRecyclerAdapter
+import tech.thdev.support.widget.listener.OnItemClickListener
+import tech.thdev.support.widget.listener.OnItemLongClickListener
 
 /**
  * Created by Tae-hwan on 10/10/2016.
@@ -17,12 +19,12 @@ abstract class BaseViewHolder<ITEM>(
         open val adapter: RecyclerView.Adapter<*>, itemView: View) :
         RecyclerView.ViewHolder(itemView) {
 
-    constructor(@LayoutRes layoutRes: Int,
-                parent: ViewGroup?, adapter: RecyclerView.Adapter<*>)
-    : this(adapter, LayoutInflater.from((adapter as? AbstractRecyclerAdapter<*, *>)?.context).inflate(layoutRes, parent, false))
+    constructor(@LayoutRes layoutRes: Int, parent: ViewGroup?, adapter: RecyclerView.Adapter<*>)
+            : this(adapter,
+            LayoutInflater.from((adapter as? AbstractRecyclerAdapter<*, *>)?.context).inflate(layoutRes, parent, false))
 
     init {
-        ButterKnife.bind(BaseRecyclerViewHolder@this, itemView)
+        ButterKnife.bind(BaseViewHolder@ this, itemView)
     }
 
     /**
@@ -30,6 +32,12 @@ abstract class BaseViewHolder<ITEM>(
      */
     abstract fun onViewHolder(item: ITEM?, position: Int)
 
-    open protected val context: Context?
+    protected val context: Context?
         get() = (adapter as? AbstractRecyclerAdapter<*, *>)?.context
+
+    protected val onItemClick: OnItemClickListener?
+        get() = (adapter as? AbstractRecyclerAdapter<*, *>)?.onItemClickListener
+
+    protected val onItemLongClick: OnItemLongClickListener?
+        get() = (adapter as? AbstractRecyclerAdapter<*, *>)?.onItemLongClickListener
 }

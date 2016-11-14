@@ -1,4 +1,4 @@
-package tech.thdev.androidrecyclerview.view.user_search
+package tech.thdev.androidrecyclerview.view.git_sample.user_search
 
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_git_hub_user_search.*
