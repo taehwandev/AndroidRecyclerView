@@ -1,4 +1,4 @@
-package tech.thdev.androidrecyclerview.view.image
+package tech.thdev.androidrecyclerview.view.design.local_image
 
 import android.os.Bundle
 import android.support.v7.widget.RecyclerView
@@ -7,15 +7,15 @@ import android.widget.Toast
 import tech.thdev.androidrecyclerview.R
 import tech.thdev.androidrecyclerview.adapter.ImageListAdapter
 import tech.thdev.androidrecyclerview.data.source.image.ImagesRepository
-import tech.thdev.androidrecyclerview.view.image.presenter.ImageListContract
-import tech.thdev.androidrecyclerview.view.image.presenter.ImageListPresenter
+import tech.thdev.androidrecyclerview.view.design.local_image.presenter.ImageListContract
+import tech.thdev.androidrecyclerview.view.design.local_image.presenter.ImageListPresenter
 import tech.thdev.base.view.BasePresenterFragment
 
 /**
  * Created by Tae-hwan on 17/10/2016.
  */
 
-class ImageListFragment :
+class LocalImageFragment :
         BasePresenterFragment<ImageListContract.View, ImageListContract.Presenter>(),
         ImageListContract.View {
 
@@ -26,7 +26,7 @@ class ImageListFragment :
     override fun onCreatePresenter() = ImageListPresenter()
 
     companion object {
-        fun getInstance() = ImageListFragment()
+        fun getInstance() = LocalImageFragment()
     }
 
     override fun getLayout() = R.layout.fragment_basic_custom_scroll

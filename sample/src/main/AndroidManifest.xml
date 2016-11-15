@@ -12,34 +12,41 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".view.main.MainActivity"
+            android:name=".view.main.SampleListActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".view.basic.BasicActivity"
-            android:label="@string/label_activity_basic"
+        <!-- Basic example -->
+        <activity android:name=".view.basic.not_mvp.BasicKotlinActivity"
+            android:label="@string/label_activity_kotlin_basic_not_mvp"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="tech.thdev.androidrecyclerview.SAMPLE_CODE" />
             </intent-filter>
         </activity>
 
         <activity
-            android:name=".view.image.ImageListActivity"
+            android:name=".view.basic.mvp.BasicJavaActivity"
+            android:label="@string/label_activity_java_basic_mvp"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="tech.thdev.androidrecyclerview.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="tech.thdev.androidrecyclerview.view.design.local_image.LocalImageActivity"
             android:label="@string/label_activity_image"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="tech.thdev.androidrecyclerview.SAMPLE_CODE" />
             </intent-filter>
         </activity>
@@ -49,7 +56,6 @@
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="tech.thdev.androidrecyclerview.SAMPLE_CODE" />
             </intent-filter>
         </activity>
@@ -59,7 +65,6 @@
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="tech.thdev.androidrecyclerview.SAMPLE_CODE" />
             </intent-filter>
         </activity>
@@ -70,7 +75,6 @@
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="tech.thdev.androidrecyclerview.SAMPLE_CODE" />
             </intent-filter>
         </activity>
@@ -80,7 +84,6 @@
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="tech.thdev.androidrecyclerview.SAMPLE_CODE" />
             </intent-filter>
         </activity>

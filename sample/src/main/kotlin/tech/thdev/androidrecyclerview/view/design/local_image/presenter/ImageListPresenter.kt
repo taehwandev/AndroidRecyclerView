@@ -1,4 +1,4 @@
-package tech.thdev.androidrecyclerview.view.image.presenter
+package tech.thdev.androidrecyclerview.view.design.local_image.presenter
 
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers

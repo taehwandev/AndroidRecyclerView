@@ -1,4 +1,4 @@
-package tech.thdev.androidrecyclerview.view.image.presenter
+package tech.thdev.androidrecyclerview.view.design.local_image.presenter
 
 import tech.thdev.androidrecyclerview.adapter.model.ImageAdapterContract
 import tech.thdev.androidrecyclerview.data.source.image.ImagesRepository

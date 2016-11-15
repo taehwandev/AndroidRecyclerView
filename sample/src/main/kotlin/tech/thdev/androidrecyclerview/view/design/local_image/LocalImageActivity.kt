@@ -1,4 +1,4 @@
-package tech.thdev.androidrecyclerview.view.image
+package tech.thdev.androidrecyclerview.view.design.local_image
 
 import android.os.Bundle
 import android.support.design.widget.CollapsingToolbarLayout
@@ -10,7 +10,7 @@ import tech.thdev.base.view.BaseActivity
  * Created by Tae-hwan on 17/10/2016.
  */
 
-class ImageListActivity : BaseActivity() {
+class LocalImageActivity : BaseActivity() {
 
     private val collapsingToolbar by lazy {
         findViewById(R.id.collapsing_toolbar) as CollapsingToolbarLayout
@@ -22,6 +22,6 @@ class ImageListActivity : BaseActivity() {
 
         collapsingToolbar.title = getString(R.string.label_activity_image)
 
-        replaceContentFragment(R.id.frame_layout, ImageListFragment.getInstance())
+        replaceContentFragment(R.id.frame_layout, LocalImageFragment.getInstance())
     }
 }

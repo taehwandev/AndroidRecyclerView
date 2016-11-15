@@ -11,7 +11,7 @@ import tech.thdev.base.presenter.BaseView
  * Created by Tae-hwan on 11/10/2016.
  */
 
-interface MainContract {
+interface SampleListContract {
 
     interface View : BaseView {
 

@@ -12,7 +12,7 @@ import tech.thdev.base.presenter.AbstractPresenter
  * Created by Tae-hwan on 11/10/2016.
  */
 
-class MainPresenter : AbstractPresenter<MainContract.View>(), MainContract.Presenter {
+class SampleListPresenter : AbstractPresenter<SampleListContract.View>(), SampleListContract.Presenter {
 
     override var prefixRepository: PrefixRepository? = null
 

@@ -3,7 +3,7 @@ package tech.thdev.androidrecyclerview.data
 import android.content.Context
 import android.content.Intent
 import tech.thdev.androidrecyclerview.contract.Contract
-import tech.thdev.androidrecyclerview.view.main.MainActivity
+import tech.thdev.androidrecyclerview.view.main.SampleListActivity
 import tech.thdev.support.widget.data.BaseItem
 
 /**
@@ -23,7 +23,7 @@ data class PrefixItem(val title: String,
 
     fun setBrowseIntent(context: Context, path: String): PrefixItem {
         intent = Intent()
-        intent?.setClass(context, MainActivity::class.java)
+        intent?.setClass(context, SampleListActivity::class.java)
         intent?.putExtra(Contract.KEY_EXTRA_PATH, path)
         return this
     }
