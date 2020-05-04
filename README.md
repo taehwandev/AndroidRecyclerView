@@ -1,3 +1,6 @@
+# Deprecated
+Use [SimpleAdapter](https://github.com/taehwandev/SimpleAdapter)
+
 # AndroidBase
 [![License](https://img.shields.io/hexpm/l/plug.svg)]()
 
