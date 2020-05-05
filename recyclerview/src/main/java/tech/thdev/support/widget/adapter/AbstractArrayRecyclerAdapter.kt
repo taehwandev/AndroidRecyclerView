@@ -1,12 +1,10 @@
 package tech.thdev.support.widget.adapter
 
-import android.content.Context
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import tech.thdev.support.widget.adapter.model.BaseRecyclerModel
 import tech.thdev.support.widget.adapter.model.BaseRecyclerView
 import tech.thdev.support.widget.listener.OnItemClickListener
 import tech.thdev.support.widget.listener.OnItemLongClickListener
-import java.util.*
 
 /**
  * Created by Tae-hwan on 10/10/2016.
@@ -14,7 +12,7 @@ import java.util.*
  * Default RecyclerAdapter
  */
 
-abstract class AbstractArrayRecyclerAdapter<ITEM, VIEW_TYPE : RecyclerView.ViewHolder?>(open val context: Context) :
+abstract class AbstractArrayRecyclerAdapter<ITEM, VIEW_TYPE : RecyclerView.ViewHolder?> :
         RecyclerView.Adapter<VIEW_TYPE>(), BaseRecyclerModel<ITEM>, BaseRecyclerView {
 
     /**

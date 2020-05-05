@@ -4,7 +4,7 @@ import android.content.Context;
 import android.view.ViewGroup;
 
 import tech.thdev.androidrecyclerview.adapter.image.holder.LargeImageViewHolder;
-import tech.thdev.androidrecyclerview.adapter.model.AdapterContract;
+import tech.thdev.androidrecyclerview.ui.header_footer.custom.adapter.model.AdapterContract;
 import tech.thdev.androidrecyclerview.data.LocalImage;
 import tech.thdev.support.widget.adapter.simple.BaseTypedefRecyclerAdapter;
 import tech.thdev.support.widget.adapter.simple.holder.BaseViewHolder;

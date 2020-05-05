@@ -11,24 +11,18 @@ Use [SimpleAdapter](https://github.com/taehwandev/SimpleAdapter)
 ### Support RecyclerView library gradle.
 
 
-## Android Developer Version info
-- buildToolsVersion = 24.0.3
-- compile sdk version = 24
-- Target sdk version = 24
-- Min sdk version = 16
-- Android studio 2.2
-
-
 ## Use Library version
-- Kotlin version = 1.0.4
-- support libraryVersion = 24.2.1
-- ButterKnife 8.4.0
+- Kotlin
+- AndroidX
+- ButterKnife
+- Retrofit
+- Glide
 
 
 ## License
 
 ```
-Copyright 2016 Tae-hwan
+Copyright 2016, 2020 Tae-hwan
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

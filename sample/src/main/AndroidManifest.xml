@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".view.main.SampleListActivity"
+            android:name=".ui.main.SampleListActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -22,17 +22,8 @@
         </activity>
 
         <!-- Basic example -->
-        <activity android:name=".view.basic.not_mvp.BasicKotlinActivity"
-            android:label="@string/label_activity_kotlin_basic_not_mvp"
-            android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="tech.thdev.androidrecyclerview.SAMPLE_CODE" />
-            </intent-filter>
-        </activity>
-
         <activity
-            android:name=".view.basic.mvp.BasicJavaActivity"
+            android:name=".ui.basic.mvp.BasicMVPActivity"
             android:label="@string/label_activity_java_basic_mvp"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -51,7 +42,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.custom_scroll.basic.BasicCustomScrollActivity"
+            android:name=".ui.custom_scroll.basic.BasicCustomScrollActivity"
             android:label="@string/label_activity_custom_scroll_image"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -70,7 +61,7 @@
         </activity>
 
         <activity
-            android:name=".view.custom_scroll.header_footer.CustomScrollHeaderFooterActivity"
+            android:name=".ui.header_footer.custom.CustomScrollHeaderFooterActivity"
             android:label="@string/label_activity_custom_scroll_image_header_footer"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>

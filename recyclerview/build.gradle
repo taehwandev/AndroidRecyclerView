@@ -1,16 +1,16 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion "24.0.3"
+    compileSdkVersion compileSdkVersionInfo
+    buildToolsVersion buildToolsVersionInfo
 
     defaultConfig {
-        minSdkVersion 16
-        targetSdkVersion 24
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion minSdkVerisonInfo
+        targetSdkVersion targetSdkVersionInfo
+        versionCode 2
+        versionName "2.0"
     }
 
     buildTypes {
@@ -19,18 +19,19 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
 }
 
 dependencies {
-    compile  "com.android.support:recyclerview-v7:$supportLibraryVersion"
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
 
-    // ButterKnife
-    compile "com.jakewharton:butterknife:$butterKnifeVersion"
-    apt "com.jakewharton:butterknife-compiler:$butterKnifeVersion"
-
-    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-}
-
-repositories {
-    mavenCentral()
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 }

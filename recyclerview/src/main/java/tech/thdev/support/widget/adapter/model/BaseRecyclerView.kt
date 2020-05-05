@@ -1,6 +1,6 @@
 package tech.thdev.support.widget.adapter.model
 
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import tech.thdev.support.widget.listener.OnItemClickListener
 import tech.thdev.support.widget.listener.OnItemLongClickListener
 
@@ -9,7 +9,6 @@ import tech.thdev.support.widget.listener.OnItemLongClickListener
  *
  * RecyclerView.Adapter View definition
  */
-
 interface BaseRecyclerView {
 
     var onItemClickListener: OnItemClickListener?
