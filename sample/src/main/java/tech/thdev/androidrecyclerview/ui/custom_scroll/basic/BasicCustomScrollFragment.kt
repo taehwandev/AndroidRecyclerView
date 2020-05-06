@@ -1,32 +1,42 @@
-package tech.thdev.androidrecyclerview.ui.header_footer.custom
+package tech.thdev.androidrecyclerview.ui.custom_scroll.basic
 
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import tech.thdev.androidrecyclerview.R
 import tech.thdev.androidrecyclerview.data.source.image.ImagesMetaLocalRepository
-import tech.thdev.androidrecyclerview.databinding.FragmentCustomScrollHeaderFooterBinding
-import tech.thdev.androidrecyclerview.ui.header_footer.custom.adapter.CustomScrollHeaderFooterAdapter
-import tech.thdev.androidrecyclerview.ui.header_footer.custom.presenter.CustomScrollHeaderFooterContract
-import tech.thdev.androidrecyclerview.ui.header_footer.custom.presenter.CustomScrollHeaderFooterPresenter
+import tech.thdev.androidrecyclerview.databinding.FragmentBasicCustomScrollBinding
+import tech.thdev.androidrecyclerview.ui.custom_scroll.basic.adapter.CustomScrollAdapterSimpleDefinition
+import tech.thdev.androidrecyclerview.ui.custom_scroll.basic.presenter.BasicCustomScrollContract
+import tech.thdev.androidrecyclerview.ui.custom_scroll.basic.presenter.BasicCustomScrollPresenter
 import tech.thdev.androidrecyclerview.ui.scroll.anim.OnRecyclerScrollListener
 import tech.thdev.base.ui.BasePresenterFragment
 
 /**
  * Created by Tae-hwan on 18/10/2016.
  */
-class CustomScrollHeaderFooterFragment :
-    BasePresenterFragment<CustomScrollHeaderFooterContract.View, CustomScrollHeaderFooterContract.Presenter>(),
-    CustomScrollHeaderFooterContract.View {
+class BasicCustomScrollFragment :
+    BasePresenterFragment<BasicCustomScrollContract.View, BasicCustomScrollContract.Presenter>(),
+    BasicCustomScrollContract.View {
 
     companion object {
-        fun newInstance(): CustomScrollHeaderFooterFragment =
-            CustomScrollHeaderFooterFragment()
+        fun newInstance(): BasicCustomScrollFragment =
+            BasicCustomScrollFragment()
     }
+
+    private val customAdapter: CustomScrollAdapterSimpleDefinition by lazy {
+        CustomScrollAdapterSimpleDefinition()
+    }
+
+    override fun onCreatePresenter(): BasicCustomScrollContract.Presenter =
+        BasicCustomScrollPresenter(
+            customAdapter,
+            customAdapter,
+            ImagesMetaLocalRepository.newInstance()
+        )
 
     private val viewHeader: View by lazy {
         requireActivity().findViewById<View>(R.id.rl_head)
@@ -35,26 +45,14 @@ class CustomScrollHeaderFooterFragment :
         requireActivity().findViewById<View>(R.id.rl_bottom_layout)
     }
 
-    private val headerFooterAdapter: CustomScrollHeaderFooterAdapter by lazy {
-        CustomScrollHeaderFooterAdapter()
-    }
-
-    override fun onCreatePresenter(): CustomScrollHeaderFooterContract.Presenter {
-        return CustomScrollHeaderFooterPresenter(
-            adapterView = headerFooterAdapter,
-            adapterModel = headerFooterAdapter,
-            metaLocalRepository = ImagesMetaLocalRepository.newInstance()
-        )
-    }
-
-    private lateinit var binding: FragmentCustomScrollHeaderFooterBinding
+    private lateinit var binding: FragmentBasicCustomScrollBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentCustomScrollHeaderFooterBinding.inflate(inflater, container, false)
+        binding = FragmentBasicCustomScrollBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -62,25 +60,12 @@ class CustomScrollHeaderFooterFragment :
         super.onViewCreated(view, savedInstanceState)
 
         initView()
-        presenter.loadHeader()
-        presenter.loadFooter()
-        presenter.loadImage()
+        presenter.updateImage()
     }
 
     private fun initView() {
         binding.root.run {
-            layoutManager = GridLayoutManager(requireContext(), 2).apply {
-                spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
-                    override fun getSpanSize(position: Int): Int {
-                        return if (headerFooterAdapter.hasHeaderItems(position)
-                            || headerFooterAdapter.hasFooterItem(position)
-                        ) spanCount
-                        else 1
-                    }
-                }
-            }
-            setHasFixedSize(true)
-            adapter = headerFooterAdapter
+            adapter = customAdapter
             addOnScrollListener(onCustomScrollListener)
         }
 
@@ -102,24 +87,23 @@ class CustomScrollHeaderFooterFragment :
 
     override fun onDestroy() {
         super.onDestroy()
-
         onCustomScrollListener.destroy()
         binding.root.removeOnScrollListener(onCustomScrollListener)
     }
 
     private val onCustomScrollListener = object : OnRecyclerScrollListener() {
-
-        override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
-            super.onScrollStateChanged(recyclerView, newState)
-        }
-
         override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
             super.onScrolled(recyclerView, dx, dy)
+
             Log.d(
                 "TAG",
                 "computeHorizontalScrollOffset " + recyclerView.computeVerticalScrollOffset()
             )
             Log.e("TAG", "-------------------")
+        }
+
+        override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+            super.onScrollStateChanged(recyclerView, newState)
         }
     }
 }

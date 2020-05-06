@@ -10,5 +10,5 @@ import tech.thdev.androidrecyclerview.data.PrefixItem
 
 interface PrefixDataSource {
 
-    fun getPrefixList(prefix: String, context: Context): Flowable<List<PrefixItem>>
+    fun getPrefixList(prefix: String?, context: Context): Flowable<List<PrefixItem>>
 }

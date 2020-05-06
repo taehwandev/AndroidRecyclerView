@@ -1,9 +1,9 @@
 package tech.thdev.androidrecyclerview.ui.main.adapter
 
 import android.view.ViewGroup
-import tech.thdev.androidrecyclerview.adapter.model.MainAdapterContract
 import tech.thdev.androidrecyclerview.data.PrefixItem
 import tech.thdev.androidrecyclerview.ui.main.adapter.holder.SampleListViewHolder
+import tech.thdev.androidrecyclerview.ui.main.adapter.model.MainAdapterContract
 import tech.thdev.support.widget.adapter.simple.BaseTypedefRecyclerAdapter
 import tech.thdev.support.widget.adapter.simple.holder.BaseViewHolder
 

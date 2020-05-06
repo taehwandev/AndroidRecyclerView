@@ -36,8 +36,7 @@ class SampleListActivity :
 
         setSupportActionBar(binding.toolbar)
 
-        val prefix = intent.getStringExtra(KEY_EXTRA_PATH) ?: ""
-
+        val prefix = intent.getStringExtra(KEY_EXTRA_PATH)
         title = prefix
 
         binding.recyclerView.adapter = adapter

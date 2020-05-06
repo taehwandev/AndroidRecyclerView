@@ -14,15 +14,15 @@ import tech.thdev.androidrecyclerview.data.PrefixItem
  */
 class PrefixAppDataSource : PrefixDataSource {
 
-    override fun getPrefixList(prefix: String, context: Context): Flowable<List<PrefixItem>> {
+    override fun getPrefixList(prefix: String?, context: Context): Flowable<List<PrefixItem>> {
         val intent = Intent(Intent.ACTION_MAIN, null)
         intent.addCategory(CATEGORY_NAME)
 
         val packageManager = context.packageManager
         val intentList = packageManager.queryIntentActivities(intent, PackageManager.GET_ACTIVITIES)
 
-        val prefixPath: List<String> = prefix.split("/")
-        val prefixWithSlash = prefix.plus("/")
+        val prefixPath: List<String> = prefix?.split("/") ?: mutableListOf()
+        val prefixWithSlash = prefix?.plus("/") ?: ""
 
         return Flowable.fromCallable {
             Flowable.fromIterable(intentList)

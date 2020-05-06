@@ -6,7 +6,9 @@ package tech.thdev.androidrecyclerview.data.source.image
 
 class ImagesRepository : ImagesDataSource {
 
-    private val imageLocalDataSource: ImagesLocalDataSource = ImagesLocalDataSource()
+    private val imageLocalDataSource: ImagesLocalDataSource =
+        ImagesLocalDataSource()
 
-    override fun getAllImages() = imageLocalDataSource.getAllImages()
+    override fun getAllImages() =
+        imageLocalDataSource.getAllImages()
 }

@@ -3,8 +3,8 @@ package tech.thdev.androidrecyclerview.ui.main.presenter
 import android.content.Context
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.schedulers.Schedulers
-import tech.thdev.androidrecyclerview.adapter.model.MainAdapterContract
 import tech.thdev.androidrecyclerview.data.source.prefix.PrefixRepository
+import tech.thdev.androidrecyclerview.ui.main.adapter.model.MainAdapterContract
 import tech.thdev.base.presenter.CommonPresenter
 
 /**
@@ -33,7 +33,7 @@ class SampleListPresenter(
         }
     }
 
-    override fun getSampleList(prefix: String, context: Context) {
+    override fun getSampleList(prefix: String?, context: Context) {
         prefixRepository.getPrefixList(prefix, context)
             .subscribeOn(Schedulers.io())
             // list to item

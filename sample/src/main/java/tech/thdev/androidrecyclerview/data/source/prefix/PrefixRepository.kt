@@ -10,6 +10,6 @@ object PrefixRepository : PrefixDataSource {
 
     private val dataSource: PrefixAppDataSource = PrefixAppDataSource()
 
-    override fun getPrefixList(prefix: String, context: Context)
+    override fun getPrefixList(prefix: String?, context: Context)
             = dataSource.getPrefixList(prefix, context)
 }

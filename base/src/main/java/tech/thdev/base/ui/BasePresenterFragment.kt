@@ -15,13 +15,17 @@ abstract class BasePresenterFragment<in VIEW : BaseView, PRESENTER : BasePresent
 
     abstract fun onCreatePresenter(): PRESENTER
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        presenter = onCreatePresenter()
+    }
+
     @Suppress("UNCHECKED_CAST")
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        presenter = onCreatePresenter()
         presenter.attachView(this as VIEW)
         return super.onCreateView(inflater, container, savedInstanceState)
     }

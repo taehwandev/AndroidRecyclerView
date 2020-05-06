@@ -17,6 +17,6 @@ interface SampleListContract {
 
     interface Presenter : BasePresenter<View> {
 
-        fun getSampleList(prefix: String, context: Context)
+        fun getSampleList(prefix: String?, context: Context)
     }
 }
