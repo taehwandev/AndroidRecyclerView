@@ -11,7 +11,7 @@ import tech.thdev.base.util.replaceContentFragment
 class CustomScrollHeaderFooterActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_custom_scroll_animation)
+        setContentView(R.layout.activity_custom_scroll_header_footer)
 
         replaceContentFragment(R.id.frame_layout,
             CustomScrollHeaderFooterFragment.newInstance()

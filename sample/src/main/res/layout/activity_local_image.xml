@@ -26,7 +26,7 @@
             <ImageView
                 android:id="@+id/img_head_view"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:alpha="0.6"
                 android:fitsSystemWindows="true"
                 android:minHeight="100dp"

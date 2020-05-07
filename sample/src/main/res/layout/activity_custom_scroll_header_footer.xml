@@ -21,7 +21,7 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <include layout="@layout/content_custom_scroll_animation" />
+    <include layout="@layout/content_custom_scroll_header_footer" />
 
     <RelativeLayout
         android:id="@+id/rl_bottom_layout"

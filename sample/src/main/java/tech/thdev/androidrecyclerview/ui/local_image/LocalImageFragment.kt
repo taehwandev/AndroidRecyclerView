@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import tech.thdev.androidrecyclerview.data.source.image.ImagesRepository
-import tech.thdev.androidrecyclerview.databinding.FragmentCustomScrollAnimationBinding
+import tech.thdev.androidrecyclerview.databinding.FragmentLocalImageBinding
 import tech.thdev.androidrecyclerview.ui.local_image.adapter.LocalImageAdapter
 import tech.thdev.androidrecyclerview.ui.local_image.presenter.LocalImageContract
 import tech.thdev.androidrecyclerview.ui.local_image.presenter.LocalImagePresenter
@@ -35,14 +35,14 @@ class LocalImageFragment :
             ImagesRepository()
         )
 
-    private lateinit var binding: FragmentCustomScrollAnimationBinding
+    private lateinit var binding: FragmentLocalImageBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentCustomScrollAnimationBinding.inflate(layoutInflater)
+        binding = FragmentLocalImageBinding.inflate(layoutInflater)
         return binding.root
     }
 
