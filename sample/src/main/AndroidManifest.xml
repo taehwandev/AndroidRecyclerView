@@ -10,11 +10,11 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/Theme.MyApplication">
         <activity
-            android:name=".view.main.SampleListActivity"
+            android:name=".ui.main.MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/Theme.MyApplication.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -22,66 +22,40 @@
         </activity>
 
         <!-- Basic example -->
-        <activity android:name=".view.basic.not_mvp.BasicKotlinActivity"
-            android:label="@string/label_activity_kotlin_basic_not_mvp"
-            android:theme="@style/AppTheme.NoActionBar">
+<!--        완료-->
+        <activity
+            android:name="tech.thdev.androidrecyclerview.ui.basic.BasicRecyclerViewActivity"
+            android:label="@string/label_basic_recycler_view"
+            android:theme="@style/Theme.MyApplication.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="tech.thdev.androidrecyclerview.SAMPLE_CODE" />
             </intent-filter>
         </activity>
 
+        <!-- 이거 살림 -->
         <activity
-            android:name=".view.basic.mvp.BasicJavaActivity"
-            android:label="@string/label_activity_java_basic_mvp"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:name="tech.thdev.androidrecyclerview.ui.local_image.LocalImageActivity"
+            android:label="@string/label_local_image_sample"
+            android:theme="@style/Theme.MyApplication.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="tech.thdev.androidrecyclerview.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.custom_scroll.CustomScrollHeaderFooterActivity"
+            android:label="@string/label_custom_scroll_image_header_footer"
+            android:theme="@style/Theme.MyApplication.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="tech.thdev.androidrecyclerview.SAMPLE_CODE" />
             </intent-filter>
         </activity>
 
-        <activity
-            android:name="tech.thdev.androidrecyclerview.view.design.local_image.LocalImageActivity"
-            android:label="@string/label_activity_image"
-            android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="tech.thdev.androidrecyclerview.SAMPLE_CODE" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".view.custom_scroll.basic.BasicCustomScrollActivity"
-            android:label="@string/label_activity_custom_scroll_image"
-            android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="tech.thdev.androidrecyclerview.SAMPLE_CODE" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".view.header_footer.basic.ImageHFActivity"
-            android:label="@string/label_activity_header_footer_sample"
-            android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="tech.thdev.androidrecyclerview.SAMPLE_CODE" />
-            </intent-filter>
-        </activity>
-
-        <activity
-            android:name=".view.custom_scroll.header_footer.CustomScrollHeaderFooterActivity"
-            android:label="@string/label_activity_custom_scroll_image_header_footer"
-            android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="tech.thdev.androidrecyclerview.SAMPLE_CODE" />
-            </intent-filter>
-        </activity>
-
-        <activity android:name="tech.thdev.androidrecyclerview.view.git_sample.user_search.GitHubUserSearchActivity"
-            android:label="@string/label_activity_network_github_kotlin"
-            android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".ui.github.GitHubUserSearchActivity"
+            android:label="@string/label_network_github_user_search"
+            android:theme="@style/Theme.MyApplication.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="tech.thdev.androidrecyclerview.SAMPLE_CODE" />

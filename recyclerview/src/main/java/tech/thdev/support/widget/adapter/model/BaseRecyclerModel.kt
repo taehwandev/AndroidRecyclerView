@@ -5,7 +5,6 @@ package tech.thdev.support.widget.adapter.model
  *
  * RecyclerView.Adapter model definition
  */
-
 interface BaseRecyclerModel<ITEM> {
 
     /**

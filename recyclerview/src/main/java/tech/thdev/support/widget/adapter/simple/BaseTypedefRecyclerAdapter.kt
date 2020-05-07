@@ -1,6 +1,5 @@
 package tech.thdev.support.widget.adapter.simple
 
-import android.content.Context
 import tech.thdev.support.widget.data.BaseItem
 
 /**
@@ -8,8 +7,7 @@ import tech.thdev.support.widget.data.BaseItem
  *
  * implement ITEM: BaseItem
  */
-abstract class BaseTypedefRecyclerAdapter<ITEM : BaseItem>(context: Context) : BaseSimpleRecyclerAdapter<ITEM>(context) {
+abstract class BaseTypedefRecyclerAdapter<ITEM : BaseItem> : BaseSimpleRecyclerAdapter<ITEM>() {
 
-    override fun onItemViewType(position: Int)
-            = getItem(position)?.viewType ?: -1
+    override fun onItemViewType(position: Int) = getItem(position)?.viewType ?: -1
 }
