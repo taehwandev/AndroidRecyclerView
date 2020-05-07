@@ -1,4 +1,4 @@
-package tech.thdev.androidrecyclerview.ui.header_footer
+package tech.thdev.androidrecyclerview.ui.custom_scroll
 
 import android.os.Bundle
 import android.util.Log
@@ -10,9 +10,9 @@ import androidx.recyclerview.widget.RecyclerView
 import tech.thdev.androidrecyclerview.R
 import tech.thdev.androidrecyclerview.data.source.image.ImagesMetaLocalRepository
 import tech.thdev.androidrecyclerview.databinding.FragmentCustomScrollHeaderFooterBinding
-import tech.thdev.androidrecyclerview.ui.header_footer.adapter.CustomScrollHeaderFooterAdapter
-import tech.thdev.androidrecyclerview.ui.header_footer.presenter.CustomScrollHeaderFooterContract
-import tech.thdev.androidrecyclerview.ui.header_footer.presenter.CustomScrollHeaderFooterPresenter
+import tech.thdev.androidrecyclerview.ui.custom_scroll.adapter.CustomScrollHeaderFooterAdapter
+import tech.thdev.androidrecyclerview.ui.custom_scroll.presenter.CustomScrollHeaderFooterContract
+import tech.thdev.androidrecyclerview.ui.custom_scroll.presenter.CustomScrollHeaderFooterPresenter
 import tech.thdev.androidrecyclerview.ui.scroll.anim.OnRecyclerScrollListener
 import tech.thdev.base.ui.BasePresenterFragment
 

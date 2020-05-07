@@ -1,4 +1,4 @@
-package tech.thdev.androidrecyclerview.ui.header_footer.adapter.model
+package tech.thdev.androidrecyclerview.ui.custom_scroll.adapter.model
 
 import tech.thdev.support.widget.adapter.header_footer.model.BaseHeaderFooterRecyclerModel
 import tech.thdev.support.widget.data.BaseItem

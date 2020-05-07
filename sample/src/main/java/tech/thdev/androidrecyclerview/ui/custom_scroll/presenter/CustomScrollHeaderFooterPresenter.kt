@@ -1,8 +1,8 @@
-package tech.thdev.androidrecyclerview.ui.header_footer.presenter
+package tech.thdev.androidrecyclerview.ui.custom_scroll.presenter
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.schedulers.Schedulers
-import tech.thdev.androidrecyclerview.ui.header_footer.adapter.model.AdapterHeaderFooterContract
+import tech.thdev.androidrecyclerview.ui.custom_scroll.adapter.model.AdapterHeaderFooterContract
 import tech.thdev.androidrecyclerview.data.LocalImage
 import tech.thdev.androidrecyclerview.data.source.image.ImagesMetaLocalRepository
 import tech.thdev.base.presenter.CommonPresenter

@@ -1,4 +1,4 @@
-package tech.thdev.androidrecyclerview.ui.header_footer.adapter.holder
+package tech.thdev.androidrecyclerview.ui.custom_scroll.adapter.holder
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -12,7 +12,7 @@ import tech.thdev.support.widget.adapter.simple.holder.BaseViewHolder
 class CustomScrollFooterViewHolder(
     parent: ViewGroup,
     adapter: RecyclerView.Adapter<*>
-) : BaseViewHolder<LocalImage>(R.layout.item_small_image_footer, parent, adapter) {
+) : BaseViewHolder<LocalImage>(R.layout.item_custom_scroll_footer, parent, adapter) {
 
     override fun onBindViewHolder(item: LocalImage?, position: Int) {
 

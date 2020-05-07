@@ -1,4 +1,4 @@
-package tech.thdev.androidrecyclerview.ui.header_footer.adapter.holder
+package tech.thdev.androidrecyclerview.ui.custom_scroll.adapter.holder
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -12,6 +12,6 @@ import tech.thdev.support.widget.adapter.simple.holder.BaseViewHolder
 class CustomScrollHeaderViewHolder(
     parent: ViewGroup,
     adapter: RecyclerView.Adapter<*>
-) : BaseViewHolder<LocalImage?>(R.layout.item_small_image_header, parent, adapter) {
+) : BaseViewHolder<LocalImage?>(R.layout.item_custom_scroll_header, parent, adapter) {
     override fun onBindViewHolder(item: LocalImage?, position: Int) {}
 }

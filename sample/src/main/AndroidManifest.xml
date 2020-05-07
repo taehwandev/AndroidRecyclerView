@@ -44,7 +44,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.header_footer.CustomScrollHeaderFooterActivity"
+            android:name=".ui.custom_scroll.CustomScrollHeaderFooterActivity"
             android:label="@string/label_custom_scroll_image_header_footer"
             android:theme="@style/Theme.MyApplication.NoActionBar">
             <intent-filter>

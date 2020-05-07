@@ -1,12 +1,12 @@
-package tech.thdev.androidrecyclerview.ui.header_footer.adapter
+package tech.thdev.androidrecyclerview.ui.custom_scroll.adapter
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import tech.thdev.androidrecyclerview.data.LocalImage
-import tech.thdev.androidrecyclerview.ui.header_footer.adapter.holder.CustomScrollFooterViewHolder
-import tech.thdev.androidrecyclerview.ui.header_footer.adapter.holder.CustomScrollHeaderViewHolder
-import tech.thdev.androidrecyclerview.ui.header_footer.adapter.holder.CustomScrollSmallImageViewHolder
-import tech.thdev.androidrecyclerview.ui.header_footer.adapter.model.AdapterHeaderFooterContract
+import tech.thdev.androidrecyclerview.ui.custom_scroll.adapter.holder.CustomScrollFooterViewHolder
+import tech.thdev.androidrecyclerview.ui.custom_scroll.adapter.holder.CustomScrollHeaderViewHolder
+import tech.thdev.androidrecyclerview.ui.custom_scroll.adapter.holder.CustomScrollSmallImageViewHolder
+import tech.thdev.androidrecyclerview.ui.custom_scroll.adapter.model.AdapterHeaderFooterContract
 import tech.thdev.support.widget.adapter.header_footer.BaseHeaderFooterTypedefRecyclerAdapter
 import java.util.*
 

@@ -1,4 +1,4 @@
-package tech.thdev.androidrecyclerview.ui.header_footer
+package tech.thdev.androidrecyclerview.ui.custom_scroll
 
 import android.os.Bundle
 import tech.thdev.androidrecyclerview.R

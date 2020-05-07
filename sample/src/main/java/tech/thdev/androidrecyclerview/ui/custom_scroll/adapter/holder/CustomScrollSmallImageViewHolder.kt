@@ -1,4 +1,4 @@
-package tech.thdev.androidrecyclerview.ui.header_footer.adapter.holder
+package tech.thdev.androidrecyclerview.ui.custom_scroll.adapter.holder
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView

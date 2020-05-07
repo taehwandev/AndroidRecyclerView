@@ -1,4 +1,4 @@
-package tech.thdev.androidrecyclerview.ui.header_footer.presenter
+package tech.thdev.androidrecyclerview.ui.custom_scroll.presenter
 
 import tech.thdev.base.presenter.BasePresenter
 import tech.thdev.base.presenter.BaseView
