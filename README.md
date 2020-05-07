@@ -14,7 +14,6 @@ Use [SimpleAdapter](https://github.com/taehwandev/SimpleAdapter)
 ## Use Library version
 - Kotlin
 - AndroidX
-- ButterKnife
 - Retrofit
 - Glide
 
