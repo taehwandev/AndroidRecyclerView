@@ -7,7 +7,7 @@
     <string name="label_local_image_sample"><b>Local image sample</b></string>
 
     <!-- Header Footer -->
-    <string name="label_custom_scroll_image_header_footer"><b>Custom scroll Header/Footer</b></string>
+    <string name="label_custom_scroll_image_header_footer"><b>Custom scroll Header-Footer</b></string>
 
     <!-- Network Sample -->
     <string name="label_network_github_user_search"><b>Network Sample - GitHub User Search</b></string>
