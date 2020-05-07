@@ -1,18 +1,14 @@
 <resources>
     <string name="app_name">AndroidRecyclerView</string>
-    <string name="action_settings">Settings</string>
 
     <!-- Basic example -->
-    <string name="label_activity_java_basic_mvp">Basic/<b>Basic - java</b></string>
-    <string name="label_activity_kotlin_basic_not_mvp">Basic/<b>Basic - kotlin</b></string>
+    <string name="label_basic_recycler_view"><b>RecyclerView Basic</b></string>
 
-    <string name="label_activity_image">Design/<b>Image list view - Kotlin</b></string>
-    <string name="label_activity_custom_scroll_image">Design/<b>Custom scroll image list - Java</b></string>
+    <string name="label_local_image_sample"><b>Local image sample</b></string>
 
     <!-- Header Footer -->
-    <string name="label_activity_header_footer_sample">HeaderFooter/<b>Basic - kotlin</b></string>
-    <string name="label_activity_custom_scroll_image_header_footer">HeaderFooter/<b>Custom scroll - Java</b></string>
+    <string name="label_custom_scroll_image_header_footer"><b>Custom scroll Header/Footer</b></string>
 
     <!-- Network Sample -->
-    <string name="label_activity_network_github_kotlin">Network Sample/<b>GitHub User Search Sample - kotlin</b></string>
+    <string name="label_network_github_user_search"><b>Network Sample - GitHub User Search</b></string>
 </resources>

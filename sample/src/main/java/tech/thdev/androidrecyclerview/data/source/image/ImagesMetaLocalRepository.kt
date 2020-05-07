@@ -11,7 +11,6 @@ class ImagesMetaLocalRepository private constructor() : ImagesMetaDataSource {
     companion object {
         private var repository: ImagesMetaLocalRepository? = null
 
-        @JvmStatic
         fun newInstance(): ImagesMetaLocalRepository =
             repository ?: ImagesMetaLocalRepository().also { repository = it }
     }

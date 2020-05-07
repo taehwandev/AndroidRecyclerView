@@ -6,7 +6,7 @@ import tech.thdev.support.widget.data.BaseItem
 /**
  * Created by Tae-hwan on 18/10/2016.
  */
-class LocalImage(
+data class LocalImage(
     @field:DrawableRes val resource: Int,
     val title: String,
     val date: String,
