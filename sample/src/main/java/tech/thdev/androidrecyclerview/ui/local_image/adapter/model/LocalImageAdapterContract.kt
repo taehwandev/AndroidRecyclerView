@@ -7,7 +7,7 @@ import tech.thdev.support.widget.adapter.model.BaseRecyclerModel
  * Created by Tae-hwan on 17/10/2016.
  */
 
-interface ImageAdapterContract {
+interface LocalImageAdapterContract {
 
     interface View {
         fun reload()

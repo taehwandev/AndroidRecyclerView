@@ -4,7 +4,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.item_custom_scroll_image.view.*
-import kotlinx.android.synthetic.main.item_large_view.view.tv_message
 import tech.thdev.androidrecyclerview.R
 import tech.thdev.androidrecyclerview.data.LocalImage
 import tech.thdev.support.widget.adapter.simple.holder.BaseViewHolder

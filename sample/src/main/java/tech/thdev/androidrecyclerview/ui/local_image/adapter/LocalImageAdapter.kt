@@ -2,8 +2,8 @@ package tech.thdev.androidrecyclerview.ui.local_image.adapter
 
 import android.view.ViewGroup
 import tech.thdev.androidrecyclerview.data.Image
-import tech.thdev.androidrecyclerview.ui.local_image.adapter.model.ImageAdapterContract
-import tech.thdev.androidrecyclerview.ui.github.adapter.holder.ImageLargeViewHolder
+import tech.thdev.androidrecyclerview.ui.local_image.adapter.model.LocalImageAdapterContract
+import tech.thdev.androidrecyclerview.ui.local_image.adapter.holder.LocalImageViewHolder
 import tech.thdev.support.widget.adapter.simple.BaseTypedefRecyclerAdapter
 import tech.thdev.support.widget.adapter.simple.holder.BaseViewHolder
 
@@ -11,8 +11,8 @@ import tech.thdev.support.widget.adapter.simple.holder.BaseViewHolder
  * Created by Tae-hwan on 17/10/2016.
  */
 
-class ImageListAdapter : BaseTypedefRecyclerAdapter<Image>(),
-    ImageAdapterContract.Model, ImageAdapterContract.View {
+class LocalImageAdapter : BaseTypedefRecyclerAdapter<Image>(),
+    LocalImageAdapterContract.Model, LocalImageAdapterContract.View {
 
     companion object {
         const val VIEW_LARGE_VIEW = 1
@@ -20,7 +20,10 @@ class ImageListAdapter : BaseTypedefRecyclerAdapter<Image>(),
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<Image> {
-        return ImageLargeViewHolder(parent, this)
+        return LocalImageViewHolder(
+            parent,
+            this
+        )
     }
 
     override fun reload() {

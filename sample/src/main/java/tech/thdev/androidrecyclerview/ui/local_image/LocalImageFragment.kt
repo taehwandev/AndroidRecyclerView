@@ -7,17 +7,17 @@ import android.view.ViewGroup
 import android.widget.Toast
 import tech.thdev.androidrecyclerview.data.source.image.ImagesRepository
 import tech.thdev.androidrecyclerview.databinding.FragmentCustomScrollAnimationBinding
-import tech.thdev.androidrecyclerview.ui.local_image.adapter.ImageListAdapter
-import tech.thdev.androidrecyclerview.ui.local_image.presenter.ImageListContract
-import tech.thdev.androidrecyclerview.ui.local_image.presenter.ImageListPresenter
+import tech.thdev.androidrecyclerview.ui.local_image.adapter.LocalImageAdapter
+import tech.thdev.androidrecyclerview.ui.local_image.presenter.LocalImageContract
+import tech.thdev.androidrecyclerview.ui.local_image.presenter.LocalImagePresenter
 import tech.thdev.base.ui.BasePresenterFragment
 
 /**
  * Created by Tae-hwan on 17/10/2016.
  */
 class LocalImageFragment :
-    BasePresenterFragment<ImageListContract.View, ImageListContract.Presenter>(),
-    ImageListContract.View {
+    BasePresenterFragment<LocalImageContract.View, LocalImageContract.Presenter>(),
+    LocalImageContract.View {
 
     companion object {
         fun getInstance() =
@@ -25,11 +25,11 @@ class LocalImageFragment :
     }
 
     private val imageAdapter by lazy {
-        ImageListAdapter()
+        LocalImageAdapter()
     }
 
     override fun onCreatePresenter() =
-        ImageListPresenter(
+        LocalImagePresenter(
             imageAdapter,
             imageAdapter,
             ImagesRepository()

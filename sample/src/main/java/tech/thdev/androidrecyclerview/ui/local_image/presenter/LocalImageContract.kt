@@ -7,7 +7,7 @@ import tech.thdev.base.presenter.BaseView
  * Created by Tae-hwan on 17/10/2016.
  */
 
-interface ImageListContract {
+interface LocalImageContract {
 
     interface View : BaseView {
 
