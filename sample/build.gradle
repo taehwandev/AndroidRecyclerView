@@ -60,8 +60,8 @@ dependencies {
     implementation "com.github.akarnokd:rxjava3-retrofit-adapter:$retrofitRxJavaAdapter"
 
     // OkHttp
-    compile "com.squareup.okhttp3:okhttp:$okhttpVersion"
-    compile "com.squareup.okhttp3:logging-interceptor:$okhttpVersion"
+    implementation "com.squareup.okhttp3:okhttp:$okhttpVersion"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttpVersion"
 
     // RX
     // https://github.com/ReactiveX/RxAndroid
